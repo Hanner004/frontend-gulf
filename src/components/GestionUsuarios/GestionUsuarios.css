@@ -1,0 +1,30 @@
+.encabezado {
+    margin: 2em;
+    color: #4A5759;
+}
+
+.tabla-usuarios {
+    margin: 2em;
+    color: #4A5759;
+}
+
+.encabezado-tabla {
+    border-bottom: solid #4A5759 1px;
+    color: #4A5759;
+    font-size: 20px;
+}
+
+.openEye {
+    width: 2em;
+}
+
+td {
+    color: #003845;
+
+}
+
+.user-data {
+    background: #49737F;
+    border-radius: 15px;
+}
+

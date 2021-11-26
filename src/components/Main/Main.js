@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import { GestionUsuarios } from "../GestionUsuarios/GestionUsuarios";
 
 export default class Main extends Component {
   render() {
     return (
       <div className="container-fluid main">
+        <GestionUsuarios />
         {/* <div className="container">
           <div className="row">
             <div className="col">Hola nombre user,</div>
