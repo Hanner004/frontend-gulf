@@ -1,10 +1,11 @@
 import React from "react";
-import { Table } from "react-bootstrap";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { Table, Button } from "react-bootstrap";
 import './GestionUsuarios.css';
+import TablaUsuarios from "./TablaUsuarios";
+//import Button from "@restart/ui/esm/Button";
 
 export function GestionUsuarios(){
+    // DATOS PARA PRUEBA
     const usuarios = [
         {id: 1, nombre: "Fabian", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Externo", estado: "I"},
         {id: 2, nombre: "Hanner", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Interno", estado: "A"},
@@ -20,10 +21,10 @@ export function GestionUsuarios(){
                 <h6>Usuarios externos, internos y administradores</h6>
             </section>
             
-            <section className="tabla-usuarios">
-                <Table responsive>
-                    <thead className="encabezado-tabla">
-                        <tr>
+            <section className="tabla">
+                <Table responsive className='tabla-usuarios'>
+                    <thead>
+                        <tr className="encabezado-tabla">
                             <th scope="col"><strong>#</strong></th>
                             <th>Nombre</th>
                             <th>Identificación</th>
@@ -31,26 +32,20 @@ export function GestionUsuarios(){
                             <th>Teléfono</th>
                             <th>Rol</th>
                             <th>Estado</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
+                    
                     <tbody>
-                        {usuarios.map((usuario => {
-                            return (
-                                <tr className="user-data">
-                                    <td><strong>{usuario.id}</strong></td>
-                                    <td><strong>{usuario.nombre}</strong></td>
-                                    <td><strong>{usuario.identificacion}</strong></td>
-                                    <td><strong>{usuario.email}</strong></td>
-                                    <td><strong>{usuario.telefono}</strong></td>
-                                    <td><strong>{usuario.rol}</strong></td>
-                                    <td><strong>{usuario.estado === "A" ? <FontAwesomeIcon icon={faEye} /> : <FontAwesomeIcon icon={faEyeSlash} />}</strong></td>
-                                </tr>
-                            );
-
-                        }))}
+                        {usuarios.map( usuario => <TablaUsuarios key={usuario.id} usuario={usuario} />)}
                     </tbody>
                 </Table>
             </section>
+            <section className="add-btn">
+                <Button className='add-user'>Agregar usuario</Button>
+            </section>
+            
+            
             
         </>
     );

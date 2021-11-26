@@ -3,28 +3,46 @@
     color: #4A5759;
 }
 
-.tabla-usuarios {
+.tabla {
     margin: 2em;
-    color: #4A5759;
+}
+
+.tabla-usuarios {
+    border-collapse: separate;
+    border-spacing: 0 15px;
 }
 
 .encabezado-tabla {
-    border-bottom: solid #4A5759 1px;
+    border-bottom: solid #ced0d2ff 1px;
     color: #4A5759;
     font-size: 20px;
 }
 
-.openEye {
-    width: 2em;
+tr {
+    text-align: center;
+    margin: 10px;
 }
 
-td {
-    color: #003845;
+td:first-child {
+    border: 0;
+    border-radius: 10px 0 0 10px;
+}
 
+td:last-child {
+    border: 0;
+    border-radius: 0 10px 10px 0;
 }
 
 .user-data {
-    background: #49737F;
-    border-radius: 15px;
+    background: #d4dbdf;
+    text-align: center;    
 }
 
+.add-btn {
+    text-align: center;
+}
+
+.add-user {
+    background: #003845ff !important;
+    border: 0;
+}
