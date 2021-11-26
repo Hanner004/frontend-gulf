@@ -18,3 +18,16 @@ code {
   height: 100%;
   background-color: #dadada;
 }
+
+.btn-gulf {
+  background-color:#FFF !important;
+  border-color: #003845 !important;
+  color: #003845 !important;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.btn-gulf:hover {
+  background-color:#003845 !important;
+  color: #FFF !important;
+}
