@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Button } from "react-bootstrap";
+import { Table} from "react-bootstrap";
 import './GestionUsuarios.css';
 import TablaUsuarios from "./TablaUsuarios";
 //import Button from "@restart/ui/esm/Button";
@@ -12,6 +12,11 @@ export function GestionUsuarios(){
         {id: 3, nombre: "Veranis", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Administrador", estado: "A"},
         {id: 4, nombre: "Marlon", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Interno", estado: "I"},
         {id: 5, nombre: "Luis", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Externo", estado: "A"},
+        {id: 6, nombre: "Fabian", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Externo", estado: "I"},
+        {id: 7, nombre: "Hanner", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Administrador", estado: "A"},
+        {id: 8, nombre: "Veranis", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Interno", estado: "A"},
+        {id: 9, nombre: "Marlon", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Interno", estado: "A"},
+        {id: 10, nombre: "Luis", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Externo", estado: "A"},
     ];
     
     return(
@@ -40,9 +45,10 @@ export function GestionUsuarios(){
                         {usuarios.map( usuario => <TablaUsuarios key={usuario.id} usuario={usuario} />)}
                     </tbody>
                 </Table>
+                
             </section>
             <section className="add-btn">
-                <Button className='add-user'>Agregar usuario</Button>
+                <button type="submit" className='add-user'>Agregar usuario</button>
             </section>
             
             

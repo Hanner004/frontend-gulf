@@ -5,6 +5,8 @@
 
 .tabla {
     margin: 2em;
+    margin-bottom: 0;
+    text-align: center;
 }
 
 .tabla-usuarios {
@@ -43,6 +45,13 @@ td:last-child {
 }
 
 .add-user {
-    background: #003845ff !important;
+    background: #003845dd;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
     border: 0;
+}
+
+.add-user:hover {
+    background: #003845ca;
 }
