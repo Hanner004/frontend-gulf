@@ -45,14 +45,10 @@ export function GestionUsuarios(){
                         {usuarios.map( usuario => <TablaUsuarios key={usuario.id} usuario={usuario} />)}
                     </tbody>
                 </Table>
-                
             </section>
             <section className="add-btn">
-                <button type="submit" className='add-user'>Agregar usuario</button>
-            </section>
-            
-            
-            
+                <button type="submit" className='add-user-btn'>Agregar usuario</button>
+            </section> 
         </>
     );
 }

@@ -6,7 +6,7 @@ import './Navbar.css';
 export default class Navbar extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid header">
         <nav className="navbar navbar-light bg-white justify-content-between">
           <Link className="navbar-brand m-2" to="/">
             <h1>

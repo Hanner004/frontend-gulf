@@ -1,11 +1,11 @@
 .encabezado {
     margin: 2em;
+    padding-top: 2em;
     color: #4A5759;
 }
 
 .tabla {
     margin: 2em;
-    margin-bottom: 0;
     text-align: center;
 }
 
@@ -44,14 +44,15 @@ td:last-child {
     text-align: center;
 }
 
-.add-user {
+.add-user-btn {
     background: #003845dd;
     color: white;
     padding: 10px;
     border-radius: 5px;
     border: 0;
+    margin-bottom: 10px;
 }
 
-.add-user:hover {
-    background: #003845ca;
+.add-user-btn:hover {
+    background: #003845ba;
 }
