@@ -4,7 +4,7 @@ import "../styles.css";
 export default class Form extends Component {
   render() {
     return (
-      <div className="container-flex form-background">
+      <div className="container-flex form-background form-login">
         <form action="">
           <div className="form-group pb-2 mb-4">
             <h1 className="text-light">
@@ -32,13 +32,13 @@ export default class Form extends Component {
           </div>
           <div className="form-group p-2">
             <a type="submit" className="btn btn-light btnSubmit" href="#">
-              Iniciar sesión
+              <b>Iniciar sesión</b>
             </a>
           </div>
           <div className="forgotPwd text-center pt-2">
             <a href="#">¿Has olvidado tu contraseña?</a>
             <br />
-            <a href="#">
+            <a href="/register">
               ¿No tienes una cuenta? <b>Registrate</b>
             </a>
           </div>

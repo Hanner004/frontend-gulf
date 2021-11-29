@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;600&display=swap");
 
 .form-background {
-  padding: 3% 9% 1% 9%;
+  /* padding: 3% 9% 1% 9%; */
   background-color: #0c4353;
   position: fixed;
   top: 50%;
@@ -10,6 +10,14 @@
   transform: translate(-50%, -50%);
   width: 35%;
   height: auto;
+}
+
+.form-register {
+  padding: 3% 2% 1% 2%;
+}
+
+.form-login {
+  padding: 3% 9% 1% 9%;
 }
 
 .form-background h1 {
