@@ -13,9 +13,9 @@ const AddUser= () => {
             <p className="subtitle">Datos básicos</p>
             <form action="/" className="form">
               <div className="row mb-3">
-                <label for="avatarUploader">
+                <label htmlFor="avatarUploader">
                   <img id="avatarImg" className="img-thumbnail rounded-circle mx-auto d-block" src="./img/img1.jpg" alt="Foto del Usuario" width="100" height="100" />
-                  <input type="file" class="form-control" id="avatarUploader" hidden/>
+                  <input type="file" className="form-control" id="avatarUploader" hidden/>
                 </label>
               </div>
             <div className="row">
@@ -24,10 +24,10 @@ const AddUser= () => {
                     <select id="tDocInput" className="form-control" placeholder="Tipo de Documento" defaultValue="CC">
                       <option value="CA">Carnét Diplomático</option>
                       <option value="CC">Cédula de Ciudadanía</option>
-                      <option value="CE" selected>Cédula de Extranjería</option>
-                      <option value="PA" selected>Pasaporte</option>
-                      <option value="PEP" selected>Permiso Especial de Permanencia</option>
-                      <option value="PPT" selected>Permiso de Protección Temporal</option>
+                      <option value="CE">Cédula de Extranjería</option>
+                      <option value="PA">Pasaporte</option>
+                      <option value="PEP">Permiso Especial de Permanencia</option>
+                      <option value="PPT">Permiso de Protección Temporal</option>
                       <option value="TI">Tarjeta de Identidad</option>
                     </select> 
                     <label htmlFor="tDocInput">Tipo de Documento</label>
