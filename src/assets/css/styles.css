@@ -18,3 +18,15 @@ code {
   height: 100%;
   background-color: #dadada;
 }
+
+.auth-background {
+  background-image: url("../img/auth-background-4K-v2.svg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  position: relative;
+  height: 100vh;
+}
