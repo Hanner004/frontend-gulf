@@ -3,6 +3,12 @@ import "../styles.css";
 
 export default class Form extends Component {
   render() {
+    let url = {
+      dashboard: "/",
+      register: "/register",
+      login: "/login",
+      forgotPwd: "/forgotPwd",
+    };
     return (
       <div className="container-flex form-background form-register">
         <form action="">
@@ -76,12 +82,16 @@ export default class Form extends Component {
             </div>
           </div>
           <div className="form-group p-2">
-            <a type="submit" className="btn btn-light btnSubmit" href="#">
+            <a
+              type="submit"
+              className="btn btn-light btnSubmit"
+              href={url.register}
+            >
               <b>Registrarse</b>
             </a>
           </div>
           <div className="forgotPwd text-center pt-2">
-            <a href="/login">
+            <a href={url.login}>
               ¿Tienes una cuenta? <b>Ingresa</b>
             </a>
           </div>
