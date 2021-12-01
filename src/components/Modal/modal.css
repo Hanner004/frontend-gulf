@@ -1,0 +1,32 @@
+.modal-title, .modal-body label{
+  color: #003845;
+  font-weight: bolder;
+}
+
+.modal-body input, .modal-body select{
+  background-color: #E4EAEC;
+}
+
+.modal-body .fw-normal {
+  color: #4A5759 ;
+}
+
+.modal-footer .primary{
+  color: white;
+  font-weight: bolder;
+  border-radius: 10px;
+  background-color: #003845;
+  border: #003845 2px solid;
+}
+
+.modal-footer .primary:hover{
+  color: white;
+}
+
+.modal-footer .secondary{
+  color: #003845;
+  font-weight: bolder;
+  border-radius: 10px;
+  background-color: white;
+  border: #003845 2px solid;
+}
