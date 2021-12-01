@@ -1,3 +1,4 @@
+import { BotonesPagar } from './BotonesPagar';
 import './Tanquear.css';
 import { TanquearAdmin } from './TanquearAdmin';
 import { TanquearExterno } from './TanquearExterno';
@@ -13,11 +14,7 @@ export function TanquearBase(props) {
                     <hr />
                     <TanquearAdmin />
                     <hr />
-                    <div className="btns">
-                        <button className="btn-cancelar" onClick={() => alert('Operación cancelada')}>Cancelar</button>
-                        <button className="btn-pagar" onClick={() => alert('Pago realizado')}><trong>Pagar</trong></button>
-                    </div>
-    
+                    <BotonesPagar />
                 </div>
             </div>
         )
@@ -31,11 +28,7 @@ export function TanquearBase(props) {
                 <hr />
                     <TanquearExterno vehiculos={props.vehiculos}/>
                 <hr />
-                <div className="btns">
-                    <button className="btn-cancelar" onClick={() => alert('Operación cancelada')}>Cancelar</button>
-                    <button className="btn-pagar" onClick={() => alert('Pago realizado')}><trong>Pagar</trong></button>
-                </div>
-
+                <BotonesPagar />
             </div>
         </div>
     )
