@@ -1,23 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Table} from "react-bootstrap";
 import './GestionUsuarios.css';
 import TablaUsuarios from "./TablaUsuarios";
 
+// DATOS PARA PRUEBA
+const usuarios = [
+    {id: 1, nombre: "Fabian", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Externo", estado: "I"},
+    {id: 2, nombre: "Hanner", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Interno", estado: "A"},
+    {id: 3, nombre: "Veranis", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Administrador", estado: "A"},
+    {id: 4, nombre: "Marlon", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Interno", estado: "I"},
+    {id: 5, nombre: "Luis", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Externo", estado: "A"}
+];
+
 export function GestionUsuarios(){
-    // DATOS PARA PRUEBA
-    const usuarios = [
-        {id: 1, nombre: "Fabian", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Externo", estado: "I"},
-        {id: 2, nombre: "Hanner", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Interno", estado: "A"},
-        {id: 3, nombre: "Veranis", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Administrador", estado: "A"},
-        {id: 4, nombre: "Marlon", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Interno", estado: "I"},
-        {id: 5, nombre: "Luis", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Externo", estado: "A"},
-        {id: 6, nombre: "Fabian", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Externo", estado: "I"},
-        {id: 7, nombre: "Hanner", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Administrador", estado: "A"},
-        {id: 8, nombre: "Veranis", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Interno", estado: "A"},
-        {id: 9, nombre: "Marlon", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Interno", estado: "A"},
-        {id: 10, nombre: "Luis", identificacion: 1122334455, email: "correo@correo.com", telefono: 1234567, rol: "Externo", estado: "A"},
-    ];
-    
+    const [data, setData] = useState(usuarios);
     return(
         <div className="gestion">
             <section className="encabezado">
@@ -41,7 +37,7 @@ export function GestionUsuarios(){
                     </thead>
                     
                     <tbody>
-                        {usuarios.map( usuario => <TablaUsuarios key={usuario.id} usuario={usuario} />)}
+                        {data.map( usuario => <TablaUsuarios key={usuario.id} usuario={usuario} />)}
                     </tbody>
                 </Table>
             </section>

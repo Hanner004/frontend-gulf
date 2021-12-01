@@ -11,6 +11,7 @@
 
 .tabla {
     margin: 2em;
+    margin-bottom: 0;
     text-align: center;
 }
 
@@ -60,4 +61,12 @@ td:last-child {
 
 .add-user-btn:hover {
     background: #003845dd;
+}
+
+.editar-btn {
+    color: black;
+}
+
+.eliminar-btn {
+    width: 1px;
 }
