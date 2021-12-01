@@ -4,6 +4,7 @@ import AddUser from "../pages/AddUser";
 import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import { TanquearVehiculo } from "../pages/TanquearVehiculo";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/register" element={<Register />}></Route>
         <Route path="/" element={<Dashboard />}></Route>
         <Route path="/AddUser" element={<AddUser />}></Route>
+        <Route path="/tanquear" element={<TanquearVehiculo />}></Route>
       </Routes>
     </Router>
   );
