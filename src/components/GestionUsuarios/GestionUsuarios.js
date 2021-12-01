@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Table} from "react-bootstrap";
+import { Link } from "react-router-dom";
 import './GestionUsuarios.css';
 import TablaUsuarios from "./TablaUsuarios";
 
@@ -42,7 +43,7 @@ export function GestionUsuarios(){
                 </Table>
             </section>
             <section className="add-btn">
-                <button type="submit" className='add-user-btn'>Agregar usuario</button>
+                <Link to={"agregar"}><button type="submit" className='add-user-btn'>Agregar usuario</button></Link>
             </section> 
         </div>
     );

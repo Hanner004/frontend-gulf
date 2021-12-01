@@ -15,7 +15,7 @@ export default function TablaUsuarios(props) {
             <td><strong>{usuario.estado === "A" ? <FontAwesomeIcon icon={faEye} /> : <FontAwesomeIcon icon={faEyeSlash} />}</strong></td>
             <td>
                 <div className="container">
-                    <Link className="editar-btn" to={"/editar"}>
+                    <Link className="editar-btn" to={"/gestion-usuarios/editar"}>
                         <FontAwesomeIcon icon={faEdit} />
                     </Link>{' '}
                     <button className="btn eliminar-btn" onClick={() => alert("Registro Eliminado")}>
