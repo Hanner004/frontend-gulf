@@ -2,7 +2,6 @@ import React from "react";
 import { Table} from "react-bootstrap";
 import './GestionUsuarios.css';
 import TablaUsuarios from "./TablaUsuarios";
-//import Button from "@restart/ui/esm/Button";
 
 export function GestionUsuarios(){
     // DATOS PARA PRUEBA
@@ -20,7 +19,7 @@ export function GestionUsuarios(){
     ];
     
     return(
-        <>
+        <div className="gestion">
             <section className="encabezado">
                 <h1>Gestión de usuarios</h1>
                 <h6>Usuarios externos, internos y administradores</h6>
@@ -49,6 +48,6 @@ export function GestionUsuarios(){
             <section className="add-btn">
                 <button type="submit" className='add-user-btn'>Agregar usuario</button>
             </section> 
-        </>
+        </div>
     );
 }
