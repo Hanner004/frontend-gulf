@@ -13,10 +13,10 @@ code {
 }
 
 .main {
-  position: sticky;
+  /* position: sticky; */
   width: 100%;
-  height: 100%;
-  background-color: #dadada;
+  min-height: 100%;
+  background-color: #ECEDF0;
 }
 
 .btn-gulf {
