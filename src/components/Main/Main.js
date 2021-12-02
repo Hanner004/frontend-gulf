@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Main.css"
+import "./main.css"
 import Gasoline from "../Home/Gasoline";
 import Users from "../Home/Users";
 import Prices from "../Home/Prices"
