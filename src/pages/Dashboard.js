@@ -12,7 +12,7 @@ function Dashboard() {
   const [user, setUser] = useState(data);
   return (
     <div className="App">
-      <Navbar />
+      <Navbar user={user} />
       <Main user={user} />
     </div>
   );

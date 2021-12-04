@@ -6,7 +6,7 @@ import Int from "./Int";
 export default function Main(props) {
   switch (props.user.role) {
     case "admin":
-      return <Admin />;
+      return <Admin user={props.user} />;
     case "ext":
       return <Ext />;
     case "int":
