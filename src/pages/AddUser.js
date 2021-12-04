@@ -7,108 +7,97 @@ const AddUser= () => {
     <div className="App">
       <Navbar />
       <Layout>
-        <div className="container-fluid main">
-          <div className="container">
-            <h1 className="title">Agregar Usuario</h1>
-            <p className="subtitle">Datos básicos</p>
-            <form action="/" className="form">
-              <div className="row mb-3">
-                <label htmlFor="avatarUploader">
-                  <img id="avatarImg" className="img-thumbnail rounded-circle mx-auto d-block" src="./img/img1.jpg" alt="Foto del Usuario" width="100" height="100" />
-                  <input type="file" className="form-control" id="avatarUploader" hidden/>
-                </label>
-              </div>
-            <div className="row">
-                <div className="col">
-                  <div className="form-floating mb-3">
-                    <select id="tDocInput" className="form-control" placeholder="Tipo de Documento" defaultValue="CC">
-                      <option value="CA">Carnét Diplomático</option>
-                      <option value="CC">Cédula de Ciudadanía</option>
-                      <option value="CE">Cédula de Extranjería</option>
-                      <option value="PA">Pasaporte</option>
-                      <option value="PEP">Permiso Especial de Permanencia</option>
-                      <option value="PPT">Permiso de Protección Temporal</option>
-                      <option value="TI">Tarjeta de Identidad</option>
-                    </select> 
-                    <label htmlFor="tDocInput">Tipo de Documento</label>
-                  </div>
-                </div>
-                <div className="col">
-                  <div className="form-floating mb-3">
-                    <input id="nDocInput" type="text" className="form-control" placeholder="Número de Documento de Identificación" />
-                    <label htmlFor="nDocInput">Número de Documento de Identificación</label>
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">
-                  <div className="form-floating mb-3">
-                    <input id="namedInput" type="text" className="form-control" placeholder="Nombres" />
-                    <label htmlFor="namedInput">Nombres</label>
-                  </div>
-                </div>
-                <div className="col">
-                  <div className="form-floating mb-3">
-                    <input id="lastnamedInput" type="text" className="form-control" placeholder="Apellidos" />
-                    <label htmlFor="lastnamedInput">Apellidos</label>
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">
-                  <div className="form-floating mb-3">
-                    <input id="emailInput" type="email" className="form-control" placeholder="Email" />
-                    <label htmlFor="emailInput">Email</label>
-                  </div>
-                </div>
-                <div className="col">
-                  <div className="form-floating mb-3">
-                    <input id="phoneInput" type="tel" className="form-control" placeholder="Teléfono" />
-                    <label htmlFor="phoneInput">Teléfono</label>
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">
-                  <div className="form-floating mb-3">
-                    <select id="rolInput" className="form-control" placeholder="Rol" defaultValue="UI">
-                      <option value="UE">Usuario Externo - Cliente</option>
-                      <option value="UI">Usuario Interno - Empleado</option>
-                    </select> 
-                    <label htmlFor="tDocInput">Rol</label>
-                  </div>
-                </div>
-                <div className="col">
-                <div className="form-floating mb-3">
-                    <select id="stateInput" className="form-control" placeholder="Estado" defaultValue="A">
-                      <option value="A">Habilitado</option>
-                      <option value="I">Inhabilitado</option>
-                    </select> 
-                    <label htmlFor="stateInput">Estado</label>
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">
-                  <div className="form-floating mb-3">
-                    <input id="passwordInput" type="password" className="form-control" placeholder="Contraseña" />
-                    <label htmlFor="passwordInput">Contraseña</label>
-                  </div>
-                </div>
-                <div className="col">
-                  <div className="form-floating mb-3">
-                    <input id="confPassInput" type="password" className="form-control" placeholder="Confirmar Contraseña" />
-                    <label htmlFor="confPassInput">Confirmar Contraseña</label>
-                  </div>
-                </div>
-              </div>
-              <div className="d-flex align-items-center justify-content-center">
-                <input type="button" className="btn btn-outline-primary btn-gulf" value="Agregar" />
-                <input type="reset" className="btn btn-outline-primary btn-gulf" value="Borrar" />
-                <input type="button" className="btn btn-outline-primary btn-gulf" value="Cancelar" />
-              </div>
-            </form>
+        <div className="container-fluid p-5 color">
+          <div className="row main-title px-4" style={{color:'#4A5759'}}>
+            <h1><b>Agregar Usuario</b></h1>
+            <p>Datos básicos</p>
           </div>
+          <form action="/" className="form">
+            <div className="mb-3 row px-4">
+              <label className="col-form-label">Foto :</label>
+              <div className="col-6">
+                <label htmlFor="avatarUploader" className="col-form-label">
+                  <img id="avatarImg" className="img-thumbnail mx-auto" src="./img/img1.jpg" alt="Foto del Usuario" width="100" height="100" />
+                </label>
+                <input type="file" className="form-control" id="avatarUploader"/>
+              </div>
+            </div>
+            <div className="mb-3 row px-4">
+              <div className="col">
+                <label className="col-form-label">Tipo de Documento :</label>
+                <select id="tDocInput" className="form-select" placeholder="Tipo de Documento" defaultValue="-" required>
+                  <option value="-">Seleccione</option>
+                  <option value="CA">Carnét Diplomático</option>
+                  <option value="CC">Cédula de Ciudadanía</option>
+                  <option value="CE">Cédula de Extranjería</option>
+                  <option value="PA">Pasaporte</option>
+                  <option value="PEP">Permiso Especial de Permanencia</option>
+                  <option value="PPT">Permiso de Protección Temporal</option>
+                  <option value="TI">Tarjeta de Identidad</option>
+                </select> 
+              </div>
+              <div className="col">
+                <label className="col-form-label">Número de Documento de Identificación :</label>
+                <input id="nDocInput" type="text" className="form-control" placeholder="" required />
+              </div>
+            </div>
+            <div className="mb-3 row px-4">
+              <div className="col">
+                <label className="col-form-label">Nombres :</label>
+                <input id="namedInput" type="text" className="form-control" placeholder="" required />
+              </div>
+              <div className="col">
+                <label className="col-form-label">Apellidos :</label>
+                <input id="lastnamedInput" type="text" className="form-control" placeholder="" required />
+              </div>
+            </div>
+            <div className="mb-3 row px-4">
+              <div className="col">
+                <label className="col-form-label">Email :</label>
+                <input id="emailInput" type="email" className="form-control" placeholder="" required />
+              </div>
+              <div className="col">
+                <label className="col-form-label">Teléfono :</label>
+                <input id="phoneInput" type="tel" className="form-control" placeholder="" required />
+              </div>
+            </div>
+            <div className="mb-3 row px-4">
+              <div className="col">
+                <label  className="col-form-label">Rol :</label>
+                <select id="rolInput" className="form-select" placeholder="Rol" defaultValue="-" required>
+                  <option value="-">Seleccione</option>
+                  <option value="Ext">Usuario Externo - Cliente</option>
+                  <option value="Int">Usuario Interno - Empleado</option>
+                </select>  
+              </div>
+              <div className="col">
+                <label className="col-form-label">Estado :</label>
+                <select id="stateInput" className="form-select" placeholder="Estado" defaultValue="-" required>
+                  <option value="-">Seleccione</option>
+                  <option value="A">Habilitado</option>
+                  <option value="I">Inhabilitado</option>
+                </select> 
+              </div>
+            </div>
+            <div className="mb-3 row px-4">
+              <div className="col">
+                <label className="col-form-label">Contraseña :</label>
+                <input id="passwordInput" type="password" className="form-control" placeholder="" />
+              </div>
+              <div className="col">
+                <label className="col-form-label">Confirmar Contraseña :</label>
+                <input id="confPassInput" type="password" className="form-control" placeholder="" />
+              </div>
+            </div>
+            <div className="mb-3 row p-4">
+              <div className="col"></div>
+              <div className="btn-group col">
+                <input type="button" className="btn btn-secondary btn-sm px-4 btn-gulf" value="Agregar" />
+                <input type="reset" className="btn btn-secondary btn-sm px-4 btn-gulf" value="Borrar" />
+                <input type="button" className="btn btn-secondary btn-sm px-4 btn-gulf" value="Cancelar" />
+              </div>
+            </div>
+          </form>
         </div>
       </Layout>
     </div>

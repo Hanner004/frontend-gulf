@@ -27,7 +27,7 @@ export default class Navbar extends Component {
               Administrador
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item href="#/profile">Perfil</Dropdown.Item>
+              <Dropdown.Item href="/profile">Perfil</Dropdown.Item>
               <Dropdown.Item href="#/logout">Cerrar sesión</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
