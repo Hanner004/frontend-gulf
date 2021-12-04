@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Main from "../components/Main/Main";
 import Navbar from "../components/Navbar/Navbar";
 
-function Dashboard(props) {
+//data
+const data = {
+  name: "Hanner",
+  role: "admin",
+};
+
+function Dashboard() {
+  const [user, setUser] = useState(data);
   return (
     <div className="App">
       <Navbar />
-      <Main />
+      <Main user={user} />
     </div>
   );
 }
