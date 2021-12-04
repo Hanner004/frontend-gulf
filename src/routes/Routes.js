@@ -15,10 +15,9 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/" element={<Dashboard />}></Route>
-        <Route path="/Adduser" element={<AddUser />}></Route>
+        <Route path="/adduser" element={<AddUser />}></Route>
         <Route path="/Profile" element={<Profile />}></Route>
         <Route path="/gestion-usuarios" element={<GestionUsuariosView />}></Route>
-        <Route path="/AddUser" element={<AddUser />}></Route>
         <Route path="/tanquear" element={<TanquearVehiculo />}></Route>
       </Routes>
     </Router>
