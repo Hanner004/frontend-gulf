@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "../styles.css";
+import "../Auth.css";
 
 export default class Form extends Component {
   render() {
