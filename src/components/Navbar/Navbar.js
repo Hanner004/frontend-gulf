@@ -8,7 +8,7 @@ export default class Navbar extends Component {
     return (
       <div className="container-fluid">
         <nav className="navbar navbar-light bg-white justify-content-between px-5">
-          <Link className="navbar-brand m-2" to="/">
+          <Link className="navbar-brand m-2 mb-1" to="/">
             <h1>
               <b style={{color:'#003845'}}>Gulf </b>
               <img className="mb-2 mx-2" src="./logo.svg" alt="logo" />
@@ -27,8 +27,8 @@ export default class Navbar extends Component {
               Administrador
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item href="#/profile">Perfil</Dropdown.Item>
-              <Dropdown.Item href="#/logout">Cerrar sesión</Dropdown.Item>
+              <Dropdown.Item href="/profile">Perfil</Dropdown.Item>
+              <Dropdown.Item href="/logout">Cerrar sesión</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </nav>
