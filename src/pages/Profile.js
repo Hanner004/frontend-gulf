@@ -1,90 +1,60 @@
 import React from "react";
 import Layout from "../components/Main/Layout";
-import Main from "../components/Main/Main";
 import Navbar from "../components/Navbar/Navbar";
 
 const Profile= () => {
   return (
     <div className="App">
       <Navbar />
-      <Main />
       <Layout>
-        <div className="container-fluid px-4 main">
-          <div className="container">
-            <h1 className="title">Perfil</h1>
-            <p className="subtitle">Datos básicos</p>
-            <form action="/" className="form">
-              <div className="row">
-                <div className="col-1">
-                </div>
-                <div className="col-2">
-                  <label htmlFor="avatarUploader">
-                    <img id="avatarImg" className="img-thumbnail mx-auto d-block" src="./img/image-kira.jpg" alt="Foto del Usuario" width="160" height="160" />
-                    <input type="file" className="form-control" id="avatarUploader" hidden/>
-                  </label>
-                </div>
-                <div className="col">
-                <div className="row">
-                    <div className="col">
-                      <div className="form-floating mb-3 form-group has-feedback">
-                        <i class="fa fa-user form-control-feedback" />
-                        <input id="namedInput" type="text" className="form-control" placeholder="Nombres"  value="Vanessa" readOnly />
-                        <label htmlFor="namedInput">Nombres</label>
-                      </div>
-                    </div>
-                    <div className="col">
-                      <div className="form-floating mb-3">
-                        <input id="lastnamedInput" type="text" className="form-control" placeholder="Apellidos" value="Mendoza Romero" readOnly />
-                        <label htmlFor="lastnamedInput">Apellidos</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col">
-                      <div className="form-floating mb-3">
-                        <select id="tDocInput" className="form-control" placeholder="Tipo de Documento" defaultValue="CC" readOnly>
-                          <option value="CA">Carnét Diplomático</option>
-                          <option value="CC">Cédula de Ciudadanía</option>
-                          <option value="CE">Cédula de Extranjería</option>
-                          <option value="PA">Pasaporte</option>
-                          <option value="PEP">Permiso Especial de Permanencia</option>
-                          <option value="PPT">Permiso de Protección Temporal</option>
-                          <option value="TI">Tarjeta de Identidad</option>
-                        </select> 
-                        <label htmlFor="tDocInput">Tipo de Documento</label>
-                      </div>
-                    </div>
-                    <div className="col">
-                      <div className="form-floating mb-3">
-                        <input id="nDocInput" type="text" className="form-control" placeholder="Número de Documento de Identificación" value="1234567891" readOnly />
-                        <label htmlFor="nDocInput">Número de Documento de Identificación</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col">
-                      <div className="form-floating mb-3">
-                        <input id="emailInput" type="email" className="form-control" placeholder="Email" value="vanessa@gmail.com" readOnly />
-                        <label htmlFor="emailInput">Email</label>
-                      </div>
-                    </div>
-                    <div className="col">
-                      <div className="form-floating mb-3">
-                        <input id="phoneInput" type="tel" className="form-control" placeholder="Teléfono" value="3015647834" readOnly />
-                        <label htmlFor="phoneInput">Teléfono</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="d-flex align-items-center justify-content-end">
-                    <input type="button" className="btn btn-outline-primary btn-gulf" value="Editar" />
-                    <input type="button" className="btn btn-outline-primary btn-gulf" value="Cancelar" />
-                  </div>
-                </div>
-              </div>  
-            </form>
+        <div className="container-fluid p-5 main">
+          <div className="row main-title px-4" style={{color:'#4A5759'}}>
+            <h1><b>Perfil</b></h1>
+            <p>Datos básicos</p>
           </div>
+          <form action="/" className="form">
+            <div className="mb-3 row px-4">
+              <div className="col-2"></div>
+              <div className="col-2 align-items-center">
+                <label htmlFor="avatarUploader">
+                  <img id="avatarImg" className="img-thumbnail rounded-circle mx-auto d-block" src="./foto.svg" alt="Foto del Usuario" width="200" height="200" />
+                  <input type="file" className="form-control" id="avatarUploader" hidden/>
+                </label>
+              </div>
+              <div className="col-6">
+                <div className="mb-3 row px-4">
+                  <div className="col">
+                    <label className="col-form-label">Nombres :</label>
+                    <p><i className="fa fa-user form-control-feedback" /> Vanessa</p>
+                  </div>
+                  <div className="col">
+                    <label className="col-form-label">Apellidos :</label>
+                    <p><i className="fa fa-user form-control-feedback" /> Mendoza Romero</p>
+                  </div>
+                </div>
+                <div className="mb-3 row px-4">
+                  <div className="col">
+                    <label className="col-form-label">Tipo de Documento :</label>
+                    <p><i className="fa fa-address-card form-control-feedback" /> Cédula de Ciudadanía</p>
+                  </div>
+                  <div className="col">
+                    <label className="col-form-label">Número de Identificación :</label>
+                    <p><i className="fa fa-address-card form-control-feedback" /> 1234567891</p>
+                  </div>
+                </div>
+                <div className="mb-3 row px-4">
+                  <div className="col">
+                    <label className="col-form-label">Email :</label>
+                    <p><i className="fa fa-envelope form-control-feedback" /> vanessa@gmail.com</p>
+                  </div>
+                  <div className="col">
+                    <label className="col-form-label">Teléfono :</label>
+                    <p><i className="fa fa-phone form-control-feedback" /> 3015647834</p>
+                  </div>
+                </div>
+              </div> 
+            </div> 
+          </form>
         </div>
       </Layout>
     </div>
