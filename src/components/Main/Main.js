@@ -8,9 +8,9 @@ export default function Main(props) {
     case "admin":
       return <Admin user={props.user} />;
     case "ext":
-      return <Ext />;
+      return <Ext user={props.user} />;
     case "int":
-      return <Int />;
+      return <Int user={props.user} />;
     default:
       return (
         <div className="main">

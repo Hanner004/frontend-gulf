@@ -13,6 +13,13 @@ code {
 }
 
 .main {
+  /* position: fixed; */
+  width: 100%;
+  min-height: 100%;
+  background-color: #ECEDF0;
+}
+
+.main-fixed {
   position: fixed;
   width: 100%;
   min-height: 100%;

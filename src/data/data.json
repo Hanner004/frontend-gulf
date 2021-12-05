@@ -1,11 +1,50 @@
 {
-  "prices":[
-    {"initialDate":"1 Nov 2021", "finalDate":"7 Nov 2021", "corriente":"80.000", "extra":"90.000"},
-    {"initialDate":"8 Nov 2021", "finalDate":"14 Nov 2021", "corriente":"50.000", "extra":"60.000"},
-    {"initialDate":"15 Nov 2021", "finalDate":"21 Nov 2021", "corriente":"60.000", "extra":"70.000"},
-    {"initialDate":"22 Nov 2021", "finalDate":"28 Nov 2021", "corriente":"30.000", "extra":"40.000"},
-    {"initialDate":"29 Nov 2021", "finalDate":"5 Dic 2021", "corriente":"70.000", "extra":"80.000"},
-    {"initialDate":"6 Dic 2021", "finalDate":"12 Dic 2021", "corriente":"50.000", "extra":"60.000"},
-    {"initialDate":"13 Dic 2021", "finalDate":"19 Dic 2021", "corriente":"30.000", "extra":"40.000"}
-  ]
+  "prices": [
+    {
+      "initialDate": "1 Nov 2021",
+      "finalDate": "7 Nov 2021",
+      "corriente": "80.000",
+      "extra": "90.000"
+    },
+    {
+      "initialDate": "8 Nov 2021",
+      "finalDate": "14 Nov 2021",
+      "corriente": "50.000",
+      "extra": "60.000"
+    },
+    {
+      "initialDate": "15 Nov 2021",
+      "finalDate": "21 Nov 2021",
+      "corriente": "60.000",
+      "extra": "70.000"
+    },
+    {
+      "initialDate": "22 Nov 2021",
+      "finalDate": "28 Nov 2021",
+      "corriente": "30.000",
+      "extra": "40.000"
+    },
+    {
+      "initialDate": "29 Nov 2021",
+      "finalDate": "5 Dic 2021",
+      "corriente": "70.000",
+      "extra": "80.000"
+    },
+    {
+      "initialDate": "6 Dic 2021",
+      "finalDate": "12 Dic 2021",
+      "corriente": "50.000",
+      "extra": "60.000"
+    },
+    {
+      "initialDate": "13 Dic 2021",
+      "finalDate": "19 Dic 2021",
+      "corriente": "30.000",
+      "extra": "40.000"
+    }
+  ],
+  "user": {
+    "name": "Equipo 9",
+    "role": "admin"
+  }
 }
