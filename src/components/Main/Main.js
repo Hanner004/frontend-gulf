@@ -1,65 +1,24 @@
 import React, { Component } from "react";
-import "./main.css"
-import Gasoline from "../Home/Gasoline";
-import Users from "../Home/Users";
-import Prices from "../Home/Prices"
-import Modal from "../Modal/Modal";
+import Admin from "./Admin";
+import Ext from "./Ext";
+import Int from "./Int";
 
-export default class Main extends Component {
-  render() {
-    return (
-      <div className="container-fluid p-5 main">
-        <div className="row main-title px-4" style={{color:'#4A5759'}}>
-          <h1><b>Hola nombre user,</b></h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-        </div>
-        <div className="row px-4">
-          <div className="col-sm-6 py-4 pe-5">
-            <Gasoline />
-            <Users />
-          </div>
-          <div className="col-sm-6 py-4">
-            <div className="row mb-4">
-              <div className="buttons-admin">
-                <button 
-                  className="btn-tanquear py-2 px-3" 
-                  data-bs-toggle="modal" 
-                  data-bs-target="#tanquear"
-                > 
-                  <p className="mb-0 me-2">Tanquear vehículo</p>
-                  <i className="fas fa-gas-pump me-2"></i>
-                </button>
-              </div>
-            </div>
-            <Prices />
+export default function Main(props) {
+  switch (props.user.role) {
+    case "admin":
+      return <Admin user={props.user} />;
+    case "ext":
+      return <Ext user={props.user} />;
+    case "int":
+      return <Int user={props.user} />;
+    default:
+      return (
+        <div className="main">
+          <div className="not-found">
+            <h1>404</h1>
+            <p>role not found</p>
           </div>
         </div>
-
-        <Modal 
-          id="tanquear" 
-          title="Tanquear vehículo"
-          textbtn="Pagar"
-          body={
-            <>
-            <div class="mb-3">
-              <label class="form-label">Identificación de usuario</label>
-              <input type="number" class="form-control" placeholder="Identificación" min="0" />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Tipo de gasolina</label>
-              <select class="form-select">
-                <option>Gasolina corriente</option>
-                <option>Gasolina extra</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Cantidad de gasolina (Galones)</label>
-              <input type="number" class="form-control" placeholder="0" min="0" max="10" />
-            </div>
-            </>
-          }
-        />
-      </div>
-    );
+      );
   }
 }

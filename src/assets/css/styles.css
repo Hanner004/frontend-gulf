@@ -13,6 +13,13 @@ code {
 }
 
 .main {
+  /* position: fixed; */
+  width: 100%;
+  min-height: 100%;
+  background-color: #ECEDF0;
+}
+
+.main-fixed {
   position: fixed;
   width: 100%;
   min-height: 100%;
@@ -55,4 +62,15 @@ code {
   -o-background-size: cover;
   position: relative;
   height: 100vh;
+}
+
+.not-found {
+  background-color: #ECEDF0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: auto;
+  text-align: center;
 }

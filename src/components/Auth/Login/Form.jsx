@@ -1,20 +1,15 @@
 import React, { Component } from "react";
-import "../styles.css";
+import { Link } from "react-router-dom";
+import "../Auth.css";
 
 export default class Form extends Component {
   render() {
-    let url = {
-      dashboard: "/",
-      register: "/register",
-      login: "/login",
-      forgotPwd: "/forgotPwd",
-    };
     return (
       <div className="container-flex form-background form-login">
-        <form action="">
+        <form action="/login" method="POST">
           <div className="form-group pb-2 mb-4">
-            <h1 className="text-light">
-              <b>Iniciar sesión</b>
+            <h1 className="text-white">
+              <p>Iniciar sesión</p>
             </h1>
             <p className="text-light">Lorem ipsum dolor sit amet adipiscing</p>
           </div>
@@ -37,20 +32,16 @@ export default class Form extends Component {
             />
           </div>
           <div className="form-group p-2">
-            <a
-              type="submit"
-              className="btn btn-light btnSubmit"
-              href={url.dashboard}
-            >
-              <b>Iniciar sesión</b>
-            </a>
+            <Link type="submit" className="btn btn-light btnSubmit" to="/">
+              <span className="bold">Iniciar sesión</span>
+            </Link>
           </div>
           <div className="forgotPwd text-center pt-2">
-            <a href={url.forgotPwd}>¿Has olvidado tu contraseña?</a>
+            <Link to="/forgotPwd">¿Has olvidado tu contraseña?</Link>
             <br />
-            <a href={url.register}>
-              ¿No tienes una cuenta? <b>Registrate</b>
-            </a>
+            <Link to="/register">
+              ¿No tienes una cuenta? <span className="bold">Registrate</span>
+            </Link>
           </div>
         </form>
       </div>
