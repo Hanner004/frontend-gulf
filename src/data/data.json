@@ -45,7 +45,21 @@
   ],
   "user": {
     "name": "Equipo 9",
-    "role": "admin"
+    "role": "ext",
+    "money": "100.000",
+    "points": "100",
+    "history": [
+      {
+        "action": "Cargo de cuenta",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      },
+      {
+        "action": "Cargo de cuenta",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      }
+    ]
   },
   "users": [
     {

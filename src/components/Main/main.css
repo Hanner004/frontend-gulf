@@ -66,6 +66,11 @@
   justify-content: end;
 }
 
+.buttons-ext {
+  display: flex;
+  justify-content: center;
+}
+
 .btn-tanquear {
   color: white;
   width: 30%;
@@ -118,4 +123,9 @@
   font-weight: bolder;
   color: #003845;
   text-align: center;
+}
+
+.main-vehicle { 
+  padding-top: 28px;
+  padding-right: 11px;
 }
