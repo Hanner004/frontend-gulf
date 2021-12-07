@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Main from "../components/Main/Main";
 import Navbar from "../components/Navbar/Navbar";
-import list from "../../src/data/data.json"
+import List from "../data/data.json";
 
 function Dashboard() {
-  const [user, setUser] = useState(list.user);
+  const [user, setUser] = useState(List.user);
   return (
     <div className="App">
       <Navbar user={user} />

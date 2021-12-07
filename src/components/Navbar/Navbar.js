@@ -5,7 +5,6 @@ import "./Navbar.css";
 
 export default class Navbar extends Component {
   render() {
-    
     function role(props) {
       switch (props.user.role) {
         case "admin":
@@ -42,7 +41,7 @@ export default class Navbar extends Component {
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item href="/profile">Perfil</Dropdown.Item>
-              <Dropdown.Item href="/logout">Cerrar sesión</Dropdown.Item>
+              <Dropdown.Item href="/login">Cerrar sesión</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </nav>

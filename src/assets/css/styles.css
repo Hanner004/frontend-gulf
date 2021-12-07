@@ -1,3 +1,8 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -13,43 +18,42 @@ code {
 }
 
 .main {
-  /* position: fixed; */
   width: 100%;
   min-height: 100%;
-  background-color: #ECEDF0;
+  background-color: #ecedf0;
 }
 
 .main-fixed {
   position: fixed;
   width: 100%;
   min-height: 100%;
-  background-color: #ECEDF0;
+  background-color: #ecedf0;
 }
 
 .color {
   width: 100% !important;
   min-height: 100% !important;
-  background-color: #ECEDF0;
+  background-color: #ecedf0;
 }
 
-.col-form-label{
+.col-form-label {
   color: #003845;
   font-weight: bolder;
 }
 
 .btn-gulf {
-  background-color:#FFF !important;
+  background-color: #fff !important;
   border: #003845 2px solid !important;
   border-radius: 10px !important;
   font-weight: bolder;
   color: #003845 !important;
-  margin-left: 20px!important;
+  margin-left: 20px !important;
   /* margin-right: 10px; */
 }
 
 .btn-gulf:hover {
-  background-color:#003845 !important;
-  color: #FFF !important;
+  background-color: #003845 !important;
+  color: #fff !important;
 }
 
 .auth-background {
@@ -65,7 +69,7 @@ code {
 }
 
 .not-found {
-  background-color: #ECEDF0;
+  background-color: #ecedf0;
   position: fixed;
   top: 50%;
   left: 50%;
