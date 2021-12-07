@@ -2,6 +2,8 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* ADMIN - INTERNO */
+
 .card-gasolinas,
 .card-usuarios,
 .card-precios {
@@ -61,14 +63,10 @@
   color: #003845;
 }
 
-.buttons-admin {
-  display: flex;
-  justify-content: end;
-}
-
+.buttons-admin,
 .buttons-ext {
   display: flex;
-  justify-content: center;
+  justify-content: end;
 }
 
 .btn-tanquear {
@@ -93,16 +91,23 @@
 }
 
 .card-precios .body-card {
-  height: 23rem;
+  height: 21rem;
   overflow: auto;
 }
-.card-precios .body-card::-webkit-scrollbar {
+.card-precios .body-card::-webkit-scrollbar,
+.vehicles-user .card-body::-webkit-scrollbar,
+.table-history-body::-webkit-scrollbar {
   -webkit-appearance: none;
 }
-.card-precios .body-card::-webkit-scrollbar:vertical {
-  width: 5px;
+.card-precios .body-card::-webkit-scrollbar:vertical,
+.vehicles-user .card-body::-webkit-scrollbar:horizontal,
+.table-history-body::-webkit-scrollbar:vertical {
+  width: 6px;
+  height: 6px;
 }
-.card-precios .body-card::-webkit-scrollbar-thumb {
+.card-precios .body-card::-webkit-scrollbar-thumb,
+.vehicles-user .card-body::-webkit-scrollbar-thumb,
+.table-history-body::-webkit-scrollbar-thumb {
   background-color: #787878;
   border-radius: 20px;
   border: 2px solid #f1f2f3;
@@ -125,7 +130,94 @@
   text-align: center;
 }
 
+
+
+/* USER */
+
 .main-vehicle { 
   padding-top: 28px;
   padding-right: 11px;
+}
+
+.card-user{
+  border-radius: 15px;
+  color: #003845;
+  height: 100%;
+  background-color: white;
+  text-align: center;
+}
+
+.money-body,
+.points-body,
+.car-body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.money-user p,
+.points-user p{
+  color: #4a5759;
+  margin-top: 15px;
+}
+
+.gasoline-user .title-gas-user,
+.card-user .title-cars-user,
+.history-user .title-his-user{
+  color: #4a5759;
+  font-weight: bolder;
+  text-align: left;
+  background-color: white;
+}
+
+.gasoline-user .item-gas-user{
+  font-weight: bolder;
+  border-radius: 10px;
+  color: #003845;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: #e4eaec;
+}
+
+.gasoline-user .item-gas-user p,
+.vehicles-user .card-body .item-car p{
+  color: #4a5759;
+  font-size: 14px;
+  margin: 0;
+}
+
+.vehicles-user .card-body{
+  display:flex;
+  overflow: auto;
+}
+
+.vehicles-user .card-body .item-car{
+  background-color: #e4eaec;
+  color: #003845;
+  border-radius: 10px;
+}
+
+.history-user{
+  height: 31rem;
+  overflow: hidden;
+}
+
+.table-history .table-history-header{
+  padding: 12px;
+  font-weight: bolder;
+  color: #c7c7c7;
+  text-align: center;
+  border-bottom: 1px solid #eaebeb;
+}
+
+.table-history-body{
+  height: 24rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.table-history-body .row{
+  color: #4a5759;
+  font-weight: bolder;
+  border-bottom: 1px solid #eaebeb;
 }

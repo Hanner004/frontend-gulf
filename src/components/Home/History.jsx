@@ -2,56 +2,31 @@ import React, { Component } from "react";
 
 export default class History extends Component {
   render() {
+    const { user } = this.props;
     return (
-      <div className="row text-center card">
-        <h5 className="card-header bg-white text-start">Historial</h5>
-        <div className="card-body">
-          <div className="row rounded">
-            <div className="col">Acción</div>
-            <div className="col">Fecha</div>
-            <div className="col">Valor</div>
-          </div>
-          <hr />
-          <div className="row rounded">
-            <div className="col">Cargo de cuenta</div>
-            <div className="col">17 de noviembre</div>
-            <div className="col">$100.000</div>
-          </div>
-          <hr />
-          <div className="row rounded">
-            <div className="col">Cargo de cuenta</div>
-            <div className="col">17 de noviembre</div>
-            <div className="col">$100.000</div>
-          </div>
-          <hr />
-          <div className="row rounded">
-            <div className="col">Cargo de cuenta</div>
-            <div className="col">17 de noviembre</div>
-            <div className="col">$100.000</div>
-          </div>
-          <hr />
-          <div className="row rounded">
-            <div className="col">Cargo de cuenta</div>
-            <div className="col">17 de noviembre</div>
-            <div className="col">$100.000</div>
-          </div>
-          <hr />
-          <div className="row rounded">
-            <div className="col">Cargo de cuenta</div>
-            <div className="col">17 de noviembre</div>
-            <div className="col">$100.000</div>
-          </div>
-          <hr />
-          <div className="row rounded">
-            <div className="col">Cargo de cuenta</div>
-            <div className="col">17 de noviembre</div>
-            <div className="col">$100.000</div>
-          </div>
-          <hr />
-          <div className="row rounded">
-            <div className="col">Cargo de cuenta</div>
-            <div className="col">17 de noviembre</div>
-            <div className="col">$100.000</div>
+      <div className="row history-user">
+        <div className="card-user">
+          <h5 className="card-header title-his-user py-3">Historial</h5>
+          <div class="table-history">
+            <div className="row table-history-header">
+              <div className="col-5">Acción</div>
+              <div className="col-4">Fecha</div>
+              <div className="col-3">Valor</div>
+            </div>
+            <div className="table-history-body">
+              {
+                user.history &&
+                user.history.map((his) => {
+                  return( 
+                    <div className="row py-3">
+                      <div className="col-5">{his.action}</div>
+                      <div className="col-4">{his.date}</div>
+                      <div className="col-3">{his.value}</div>
+                    </div>
+                  )
+                })
+              }
+            </div>
           </div>
         </div>
       </div>

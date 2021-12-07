@@ -26,17 +26,17 @@
     font-size: 20px;
 }
 
-tr {
+.tabla-usuarios tr {
     text-align: center;
     margin: 10px;
 }
 
-td:first-child {
+.tabla-usuarios td:first-child {
     border: 0;
     border-radius: 10px 0 0 10px;
 }
 
-td:last-child {
+.tabla-usuarios td:last-child {
     border: 0;
     border-radius: 0 10px 10px 0;
 }

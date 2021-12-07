@@ -22,7 +22,7 @@ export default class Prices extends Component {
           </div>
         </div>
 
-        <div className="body-card pb-3 px-3">
+        <div className="body-card px-3">
           {list.prices.map((row) => {
             return (
               <div className="row item-precio py-3">
@@ -42,17 +42,15 @@ export default class Prices extends Component {
               </div>
             );
           })}
-          <div className="row footer-card py-2">
-            <div className="col">
-              <i
-                class="fas fa-plus"
-                type="button"
-                title="Agregar"
-                data-bs-toggle="modal"
-                data-bs-target="#agregar-precios"
-              ></i>
-            </div>
-          </div>
+        </div>
+        <div className="footer-card py-2">
+          <i
+            class="fas fa-plus"
+            type="button"
+            title="Agregar"
+            data-bs-toggle="modal"
+            data-bs-target="#agregar-precios"
+          ></i>
         </div>
 
         <Modal
