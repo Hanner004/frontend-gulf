@@ -158,6 +158,16 @@
       "telefono": 1234567,
       "rol": "Externo",
       "estado": "A"
+    },
+    {
+      "id": 6,
+      "nombre": "Vanessa",
+      "apellidos":"Mendoza Romero",
+      "identificacion": 1234567891,
+      "email": "vanessa@gmail.com",
+      "telefono": 3015647834,
+      "rol": "Interno",
+      "estado": "A"
     }
   ],
 

@@ -2,10 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthLogin, AuthRegister } from "../pages/Auth";
 import Dashboard from "../pages/Dashboard";
-import AddUser from "../pages/AddUser";
-import Profile from "../pages/Profile";
+import Profile from "../components/Users/Profile";
 import GestionUsuariosView from "../pages/GestionUsuariosView";
 import { TanquearVehiculo } from "../pages/TanquearVehiculo";
+import AddUser from "../pages/AddUserPage";
 
 function App() {
   return (
