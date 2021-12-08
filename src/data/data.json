@@ -58,9 +58,61 @@
         "action": "Cargo de cuenta",
         "date": "17 de noviembre",
         "value": "100.000"
+      },
+      {
+        "action": "Cargo de cuenta",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      },
+      {
+        "action": "Cargo de cuenta",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      },
+      {
+        "action": "Cargo de cuenta",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      },
+      
+      {
+        "action": "Cargo de cuenta",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      },
+      {
+        "action": "Cargo de cuenta",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      },
+      {
+        "action": "Tanqueo",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      }
+    ],
+    "cars":[
+      {
+        "model": "Vehículo 1",
+        "placa": "ABC 123",
+        "capacity": 4,
+        "state": "Activo"
+      },
+      {
+        "model": "Vehículo 2",
+        "placa": "AAA 123",
+        "capacity": 3,
+        "state": "Activo"
+      },
+      {
+        "model": "Vehículo 3",
+        "placa": "SDE 123",
+        "capacity": 5,
+        "state": "Activo"
       }
     ]
   },
+  
   "users": [
     {
       "id": 1,
@@ -106,6 +158,21 @@
       "telefono": 1234567,
       "rol": "Externo",
       "estado": "A"
+    }
+  ],
+
+  "gasolines":[
+    {
+      "tipe": "Corriente",
+      "price": "8.000",
+      "cant" : "100",
+      "state" : "Activo"
+    },
+    {
+      "tipe": "Extra",
+      "price": "9.000",
+      "cant" : "150",
+      "state": "Activo"
     }
   ]
 }

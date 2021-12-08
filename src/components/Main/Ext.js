@@ -5,6 +5,7 @@ import Points from "../Home/Points";
 import GasolinePrices from "../Home/GasolinePrices";
 import History from "../Home/History";
 import Vehicles from "../Home/Vehicles";
+import { TanquearExterno } from "../Tanquear/TanquearExterno"
 import Modal from "../Modal/Modal";
 
 export default class Ext extends Component {
@@ -31,23 +32,23 @@ export default class Ext extends Component {
                 <GasolinePrices />
               </div>
             </div>
-            <div className="row mx-4 main-vehicle">
-              <Vehicles />
+            <div className="row mx-3 main-vehicle">
+              <Vehicles user={user} />
             </div>
           </div>
-          <div className="col-sm-5 py-4">
+          <div className="col-sm-5 pt-4">
             <div className="row mb-4">
               <div className="buttons-ext">
                 <button
-                  className="btn-tanquear py-2 px-3 mx-5"
+                  className="btn-tanquear py-2 px-3 me-3"
                   data-bs-toggle="modal"
                   data-bs-target="#cargar"
                 >
                   <p className="mb-0 me-2">Cargar saldo</p>
-                  <i className="fas fa-dollar-sign me-2"></i>
+                  <i className="fas fa-donate me-2"></i>
                 </button>
                 <button
-                  className="btn-tanquear py-2 px-3 mx-5"
+                  className="btn-tanquear py-2 px-3 mx-3"
                   data-bs-toggle="modal"
                   data-bs-target="#tanquear"
                 >
@@ -59,41 +60,14 @@ export default class Ext extends Component {
             <History user={user} />
           </div>
         </div>
+
         <Modal
           id="tanquear"
           title="Tanquear vehículo"
           textbtn="Pagar"
-          body={
-            <>
-              <div class="mb-3">
-                <label class="form-label">Identificación de usuario</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  placeholder="Identificación"
-                  min="0"
-                />
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Tipo de gasolina</label>
-                <select class="form-select">
-                  <option>Gasolina corriente</option>
-                  <option>Gasolina extra</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Cantidad de gasolina (Galones)</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  placeholder="0"
-                  min="0"
-                  max="10"
-                />
-              </div>
-            </>
-          }
+          body={<TanquearExterno vehiculos={user.cars}/>}
         />
+
         <Modal
           id="cargar"
           title="Cargar saldo"
@@ -105,9 +79,8 @@ export default class Ext extends Component {
                 <input
                   type="number"
                   class="form-control"
-                  placeholder="0"
+                  placeholder="$"
                   min="0"
-                  max="10"
                 />
               </div>
             </>

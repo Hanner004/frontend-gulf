@@ -5,17 +5,14 @@ import React, { Component } from "react";
 export default class Points extends Component {
   render() {
     return (
-      <div className="row text-center bg-white">
-        <div className="card-header bg-white">
-          <FontAwesomeIcon icon={faStar} />
-        </div>
-        <div className="card-body text-center pt-5 pb-5 border">
-          <div className="row">
+      <div className="row points-user h-100">
+        <div className="card-user points-body p-5">
+          <div>
+            <FontAwesomeIcon icon={faStar} style={{fontSize:'60px'}}/>
             <p>Puntos acumulados</p>
+            <h2 className="fw-bolder">100</h2>
           </div>
-          <div className="row">
-            <p>100</p>
-          </div>
+          
         </div>
       </div>
     );

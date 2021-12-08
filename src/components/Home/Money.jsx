@@ -5,16 +5,12 @@ import React, { Component } from "react";
 export default class Money extends Component {
   render() {
     return (
-      <div className="row text-center bg-white">
-        <div className="card-header bg-white">
-          <FontAwesomeIcon icon={faDollarSign} />
-        </div>
-        <div className="card-body text-center pt-5 pb-5 border">
-          <div className="row">
+      <div className="row money-user h-100">
+        <div className="card-user money-body">
+          <div>
+            <FontAwesomeIcon icon={faDollarSign} style={{fontSize:'60px'}}/>
             <p>Saldo disponible</p>
-          </div>
-          <div className="row">
-            <p>$100.000</p>
+            <h2 className="fw-bolder">$100.000</h2>
           </div>
         </div>
       </div>

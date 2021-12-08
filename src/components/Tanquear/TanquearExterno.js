@@ -10,12 +10,12 @@ export function TanquearExterno(props) {
                     Vehículo:
                 </label>
                 <select>
-                {vehiculos.map( vehiculo => <option value={vehiculo.id}>{vehiculo.vehiculo}</option>)}
+                {vehiculos.map( vehiculo => <option value={vehiculo.id}>{vehiculo.model} - {vehiculo.placa}</option>)}
                 </select>
 
             </div>
             <div className="row">
-                <div className="col-5 tipo-gasolina-tanquear input-tanquear">
+                <div className="col-6 tipo-gasolina-tanquear input-tanquear">
                     <label>
                         Tipo de gasolina:
                     </label>
@@ -25,11 +25,11 @@ export function TanquearExterno(props) {
                         <option value="corriente">Gasolina corriente</option>
                     </select>
                 </div>
-                <div className="col-5 cant-gasolina-tanquear input-tanquear">
+                <div className="col-6 cant-gasolina-tanquear input-tanquear">
                     <label>
                         Cantidad de gasolina:
                     </label>
-                    <input />
+                    <input type="number" min="0" placeholder="0"/>
                 </div>
             </div>
             
