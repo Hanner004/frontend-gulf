@@ -5,12 +5,18 @@ import "./GestionUsuarios.css";
 import TablaUsuarios from "./TablaUsuarios";
 import List from "../../data/data.json";
 
-export function GestionUsuarios() {
-  const [data, setData] = useState(List.users);
+export function GestionUsuarios({role}) {
+
+  // const [data, setData] = useState(List.users);
+  let data = []
+  role === "int" ?
+    List.users.map((user)=>user.rol!="Administrador"&&data.push(user)):
+    data = List.users
+
   return (
-    <div className="gestion">
+    <div className="gestion px-4">
       <section className="encabezado">
-        <h1>Gestión de usuarios</h1>
+        <h1><b>Gestión de usuarios</b></h1>
         <h6>Usuarios externos, internos y administradores</h6>
       </section>
 

@@ -1,5 +1,5 @@
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif, FontAwesome;
 }
 
 /* ADMIN - INTERNO */
@@ -30,6 +30,7 @@
   text-align: center;
   align-items: center;
   color: #c7c7c7;
+  border-bottom: 1px solid #eaebeb;
 }
 
 .body-card .item-gasolina {
@@ -39,6 +40,7 @@
   color: #003845;
   display: flex;
   align-items: center;
+  margin-top: 10px;
   background-color: #e4eaec;
 }
 
@@ -87,12 +89,14 @@
 }
 
 .card-precios {
-  height: 31rem;
+  height: 30.5rem;
+  overflow: hidden;
 }
 
 .card-precios .body-card {
-  height: 21rem;
-  overflow: auto;
+  height: 20rem;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .card-precios .body-card::-webkit-scrollbar,
 .vehicles-user .card-body::-webkit-scrollbar,
@@ -119,17 +123,12 @@
   text-align: center;
   border-bottom: 1px solid #eaebeb;
 }
-.body-card .item-precio i {
-  color: #003845;
-  font-size: 20px;
-}
 
 .footer-card {
   font-weight: bolder;
   color: #003845;
   text-align: center;
 }
-
 
 
 /* USER */

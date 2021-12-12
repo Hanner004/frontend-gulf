@@ -24,14 +24,14 @@ export default class Navbar extends Component {
           <Link className="navbar-brand m-2 mb-1" to="/">
             <h1>
               <b style={{ color: "#003845" }}>Gulf </b>
-              <img className="mb-2 mx-2" src="./logo.svg" alt="logo" />
+              <img className="mb-2 mx-2" src="../logo.svg" alt="logo" />
             </h1>
           </Link>
 
           <Dropdown>
             <img
               className="mx-2"
-              src="./foto.svg"
+              src="/img/foto.svg"
               alt="foto"
               width="49"
               height="49"

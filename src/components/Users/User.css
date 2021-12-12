@@ -1,0 +1,65 @@
+.main-fixed {
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  background-color: #ecedf0;
+}
+
+.main-User{
+  width: 100% !important;
+  min-height: 100% !important;
+  background-color: #ecedf0;
+}
+
+.main-User label,
+.form-profile label{
+  color: #003845;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.main-User .photo-user{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-User input,
+.main-User select{
+  background-color: #D4DBDF;
+}
+
+.main-User .data input,
+.main-User .data select{
+  height: 50px;
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+}
+
+.btn-gulf {
+  height: 50px;
+  width: 20% !important;
+  display: flex !important;
+  color: #003845 !important;
+  font-size: medium !important;
+  margin-left: 20px !important;
+  font-weight: bolder !important;
+  border-radius: 10px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #fff !important;
+  border: #003845 2px solid !important;
+}
+
+.btn-gulf:hover {
+  color: #fff !important;
+  background-color: #003845 !important;
+}
+
+.form-profile p{
+  color: #4A5759;
+  margin-top: 5px;
+}

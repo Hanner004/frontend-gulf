@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 import Modal from "../Modal/Modal";
 import list from "../../data/data.json";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class Prices extends Component {
   render() {
     return (
-      <div className="row card-precios mb-4 vstack">
+      <div className="row card-precios vstack">
         <div className="header-card px-3">
           <div className="title-card p-4">
             <p className="m-0">Gestión de precios</p>
           </div>
-          <div
-            className="row header-title py-3"
-            style={{ borderBottom: "1px solid #EAEBEB" }}
-          >
+          <div className="row header-title py-3">
             <div className="col">Inicial</div>
             <div className="col">Final</div>
             <div className="col">Corriente</div>
@@ -23,24 +22,26 @@ export default class Prices extends Component {
         </div>
 
         <div className="body-card px-3">
-          {list.prices.map((row) => {
-            return (
-              <div className="row item-precio py-3">
-                <div className="col">{row.initialDate}</div>
-                <div className="col">{row.finalDate}</div>
-                <div className="col">${row.corriente}</div>
-                <div className="col">${row.extra}</div>
-                <div className="col">
-                  <i
-                    className="fas fa-edit"
-                    type="button"
-                    title="Editar"
-                    data-bs-toggle="modal"
-                    data-bs-target="#editar-precios"
-                  ></i>
+          {
+            list.prices.map((row) => {
+              return (
+                <div className="row item-precio py-3">
+                  <div className="col">{row.initialDate}</div>
+                  <div className="col">{row.finalDate}</div>
+                  <div className="col">${row.corriente}</div>
+                  <div className="col">${row.extra}</div>
+                  <div className="col">
+                    <FontAwesomeIcon 
+                      icon={faEdit} 
+                      type="button"
+                      title="Editar"
+                      data-bs-toggle="modal"
+                      data-bs-target="#editar-precios"
+                      style={{color:'#003845',fontSize:'20px'}}
+                    />
+                  </div>
                 </div>
-              </div>
-            );
+              );
           })}
         </div>
         <div className="footer-card py-2">

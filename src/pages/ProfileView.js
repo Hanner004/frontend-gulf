@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Main from "../components/Main/Main";
 import Navbar from "../components/Navbar/Navbar";
+import Profile from "../components/Users/Profile";
 import List from "../data/data.json";
 
-function Dashboard() {
-  useEffect(()=>document.title="Inicio");
+function ProfileView() {
+  useEffect(()=>document.title="Perfil");
   const [user, setUser] = useState(List.user);
   return (
     <div className="App">
       <Navbar user={user} />
-      <Main user={user} />
+      <Profile user={user} />
     </div>
   );
 }
 
-export default Dashboard;
+export default ProfileView;

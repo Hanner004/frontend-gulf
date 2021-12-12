@@ -44,8 +44,14 @@
     }
   ],
   "user": {
+    "role": "admin",
     "name": "Equipo 9",
-    "role": "ext",
+    "fullname": "Mendoza Romero",
+    "tipeID": "CC",
+    "identificacion": 1122334455,
+    "email": "correo@correo.com",
+    "telefono": 1234567,
+    "state": "A",
     "money": "100.000",
     "points": "100",
     "history": [
@@ -117,6 +123,8 @@
     {
       "id": 1,
       "nombre": "Fabian",
+      "apellidos": "Mendoza Romero",
+      "tipeId":"CC",
       "identificacion": 1122334455,
       "email": "correo@correo.com",
       "telefono": 1234567,
@@ -126,6 +134,8 @@
     {
       "id": 2,
       "nombre": "Hanner",
+      "apellidos": "Mendoza Romero",
+      "tipeId":"CC",
       "identificacion": 1122334455,
       "email": "correo@correo.com",
       "telefono": 1234567,
@@ -135,6 +145,8 @@
     {
       "id": 3,
       "nombre": "Veranis",
+      "apellidos": "Mendoza Romero",
+      "tipeId":"CC",
       "identificacion": 1122334455,
       "email": "correo@correo.com",
       "telefono": 1234567,
@@ -144,6 +156,8 @@
     {
       "id": 4,
       "nombre": "Marlon",
+      "apellidos": "Mendoza Romero",
+      "tipeId":"CC",
       "identificacion": 1122334455,
       "email": "correo@correo.com",
       "telefono": 1234567,
@@ -153,6 +167,8 @@
     {
       "id": 5,
       "nombre": "Luis",
+      "apellidos": "Mendoza Romero",
+      "tipeId":"CC",
       "identificacion": 1122334455,
       "email": "correo@correo.com",
       "telefono": 1234567,
@@ -162,11 +178,12 @@
     {
       "id": 6,
       "nombre": "Vanessa",
-      "apellidos":"Mendoza Romero",
+      "apellidos": "Mendoza Romero",
+      "tipeId":"CE",
       "identificacion": 1234567891,
       "email": "vanessa@gmail.com",
       "telefono": 3015647834,
-      "rol": "Interno",
+      "rol": "Administrador",
       "estado": "A"
     }
   ],

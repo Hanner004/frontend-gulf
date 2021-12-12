@@ -1,13 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import "./User.css"
+import list from "../../data/data.json"
+// import imgDefault from "./public/img/img1.jpg"
 
-export default function AddUser(){
+export default function EditUser(props){
+
+  const usuario = props.user;
+  const {id} = useParams();
+  const client = list.users.find(user => user.id == id);
+
   return (
     <div className="container-fluid p-5 main-User">
       <div className="row px-4">
         <h1 style={{ color: "#4A5759" }}>
-          <b>Agregar Usuario</b>
+          <b>Editar usuario {client.nombre}</b>
         </h1>
         <p>Datos básicos</p>
       </div>
@@ -19,7 +26,7 @@ export default function AddUser(){
               <img
                 id="avatarImg"
                 className="img-thumbnail mx-auto"
-                src="./img/img1.jpg"
+                src={'/img/img1.jpg'}
                 alt="Foto del Usuario"
                 width="150"
                 height="150"
@@ -41,7 +48,7 @@ export default function AddUser(){
                 id="tDocInput"
                 className="form-select"
                 placeholder="Tipo de Documento"
-                defaultValue="-"
+                defaultValue={client.tipeId}
                 required
               >
                 <option value="-">Seleccione</option>
@@ -63,6 +70,7 @@ export default function AddUser(){
                 type="number"
                 className="form-control"
                 min="0"
+                defaultValue={client.identificacion}
                 placeholder="&#xf47f;"
                 required
               />
@@ -76,6 +84,7 @@ export default function AddUser(){
                 id="namedInput"
                 type="text"
                 className="form-control"
+                defaultValue={client.nombre}
                 placeholder="&#xf406;"
                 required
               />
@@ -86,6 +95,7 @@ export default function AddUser(){
                 id="lastnamedInput"
                 type="text"
                 className="form-control"
+                defaultValue={client.apellidos}
                 placeholder="&#xf406;"
                 required
               />
@@ -99,6 +109,7 @@ export default function AddUser(){
                 id="emailInput"
                 type="email"
                 className="form-control"
+                defaultValue={client.email}
                 placeholder="&#xf1fa;"
                 required
               />
@@ -109,42 +120,46 @@ export default function AddUser(){
                 id="phoneInput"
                 type="tel"
                 className="form-control"
+                defaultValue={client.telefono}
                 placeholder="&#xf095;"
                 required
               />
             </div>
           </div>
 
-          <div className="mb-4 row ">
-            <div className="col">
-              <label>Rol :</label>
-              <select
-                id="rolInput"
-                className="form-select"
-                placeholder="Rol"
-                defaultValue="-"
-                required
-              >
-                <option value="-">Seleccione</option>
-                <option value="Ext">Usuario Externo - Cliente</option>
-                <option value="Int">Usuario Interno - Empleado</option>
-              </select>
+          {
+            usuario.role==="admin" &&
+            <div className="mb-4 row ">
+              <div className="col">
+                <label>Rol :</label>
+                <select
+                  id="rolInput"
+                  className="form-select"
+                  placeholder="Rol"
+                  defaultValue={client.rol}
+                  required
+                >
+                  <option value="-">Administrador</option>
+                  <option value="Externo">Usuario Externo - Cliente</option>
+                  <option value="Interno">Usuario Interno - Empleado</option>
+                </select>
+              </div>
+              <div className="col">
+                <label>Estado :</label>
+                <select
+                  id="stateInput"
+                  className="form-select"
+                  placeholder="Estado"
+                  defaultValue={client.estado}
+                  required
+                >
+                  <option value="-">Seleccione</option>
+                  <option value="A">Habilitado</option>
+                  <option value="I">Inhabilitado</option>
+                </select>
+              </div>
             </div>
-            <div className="col">
-              <label>Estado :</label>
-              <select
-                id="stateInput"
-                className="form-select"
-                placeholder="Estado"
-                defaultValue="-"
-                required
-              >
-                <option value="-">Seleccione</option>
-                <option value="A">Habilitado</option>
-                <option value="I">Inhabilitado</option>
-              </select>
-            </div>
-          </div>
+          }
 
           <div className="mb-4 row ">
             <div className="col">
@@ -169,22 +184,17 @@ export default function AddUser(){
         </div>
 
         <div className="mb-4 row py-4 px-5 justify-content-center">
-          <input
-            type="button"
-            className="btn px-4 btn-gulf"
-            value="Agregar"
-          />
-          <input
-            type="reset"
-            className="btn px-4 btn-gulf"
-            value="Borrar"
-          />
           <Link
             type="button"
             to="/gestion-usuarios"
             className="btn px-4 btn-gulf">
             Cancelar
           </Link>
+          <input
+            type="button"
+            className="btn px-4 btn-gulf"
+            value="Guardar"
+          />
         </div>
       </form>
     </div>
