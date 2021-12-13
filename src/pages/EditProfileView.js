@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Main from "../components/Main/Main";
 import Navbar from "../components/Navbar/Navbar";
+import EditProfile from "../components/Users/EditProfile";
 import List from "../data/data.json";
 
-function Dashboard() {
-  useEffect(()=>document.title="Inicio");
+function EditProfileView() {
+  useEffect(()=>document.title="Editar perfil");
   const [user, setUser] = useState(List.user);
   return (
     <div className="App">
       <Navbar user={user} />
-      <Main user={user} />
+      <EditProfile user={user} />
     </div>
   );
 }
 
-export default Dashboard;
+export default EditProfileView;

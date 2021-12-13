@@ -19,7 +19,7 @@ export default class Int extends Component {
         <div className="row px-4">
           <div className="col-sm-6 py-4 pe-5">
             <Gasoline />
-            <Users />
+            <Users role={user.role} />
           </div>
           <div className="col-sm-6 py-4">
             <div className="row mb-4">

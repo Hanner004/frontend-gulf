@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Main from "../components/Main/Main";
 import Navbar from "../components/Navbar/Navbar";
+import EditUser from "../components/Users/EditUser";
 import List from "../data/data.json";
 
-function Dashboard() {
-  useEffect(()=>document.title="Inicio");
+function EditUserView() {
+  useEffect(()=>document.title="Editar usuario");
   const [user, setUser] = useState(List.user);
   return (
     <div className="App">
       <Navbar user={user} />
-      <Main user={user} />
+      <EditUser user={user} />
     </div>
   );
 }
 
-export default Dashboard;
+export default EditUserView;

@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./User.css"
 
-export default function AddUser(){
+export default function EditProfile(props){
+
+  const usuario = props.user;
+
   return (
     <div className="container-fluid p-5 main-User">
       <div className="row px-4">
         <h1 style={{ color: "#4A5759" }}>
-          <b>Agregar Usuario</b>
+          <b>Editar perfil</b>
         </h1>
         <p>Datos básicos</p>
       </div>
@@ -41,7 +44,7 @@ export default function AddUser(){
                 id="tDocInput"
                 className="form-select"
                 placeholder="Tipo de Documento"
-                defaultValue="-"
+                defaultValue={usuario.tipeID}
                 required
               >
                 <option value="-">Seleccione</option>
@@ -63,6 +66,7 @@ export default function AddUser(){
                 type="number"
                 className="form-control"
                 min="0"
+                defaultValue={usuario.identificacion}
                 placeholder="&#xf47f;"
                 required
               />
@@ -76,6 +80,7 @@ export default function AddUser(){
                 id="namedInput"
                 type="text"
                 className="form-control"
+                defaultValue={usuario.name}
                 placeholder="&#xf406;"
                 required
               />
@@ -86,6 +91,7 @@ export default function AddUser(){
                 id="lastnamedInput"
                 type="text"
                 className="form-control"
+                defaultValue={usuario.fullname}
                 placeholder="&#xf406;"
                 required
               />
@@ -99,6 +105,7 @@ export default function AddUser(){
                 id="emailInput"
                 type="email"
                 className="form-control"
+                defaultValue={usuario.email}
                 placeholder="&#xf1fa;"
                 required
               />
@@ -109,40 +116,10 @@ export default function AddUser(){
                 id="phoneInput"
                 type="tel"
                 className="form-control"
+                defaultValue={usuario.telefono}
                 placeholder="&#xf095;"
                 required
               />
-            </div>
-          </div>
-
-          <div className="mb-4 row ">
-            <div className="col">
-              <label>Rol :</label>
-              <select
-                id="rolInput"
-                className="form-select"
-                placeholder="Rol"
-                defaultValue="-"
-                required
-              >
-                <option value="-">Seleccione</option>
-                <option value="Ext">Usuario Externo - Cliente</option>
-                <option value="Int">Usuario Interno - Empleado</option>
-              </select>
-            </div>
-            <div className="col">
-              <label>Estado :</label>
-              <select
-                id="stateInput"
-                className="form-select"
-                placeholder="Estado"
-                defaultValue="-"
-                required
-              >
-                <option value="-">Seleccione</option>
-                <option value="A">Habilitado</option>
-                <option value="I">Inhabilitado</option>
-              </select>
             </div>
           </div>
 
@@ -169,22 +146,17 @@ export default function AddUser(){
         </div>
 
         <div className="mb-4 row py-4 px-5 justify-content-center">
-          <input
-            type="button"
-            className="btn px-4 btn-gulf"
-            value="Agregar"
-          />
-          <input
-            type="reset"
-            className="btn px-4 btn-gulf"
-            value="Borrar"
-          />
           <Link
             type="button"
-            to="/gestion-usuarios"
+            to="/Profile"
             className="btn px-4 btn-gulf">
             Cancelar
           </Link>
+          <input
+            type="button"
+            className="btn px-4 btn-gulf"
+            value="Guardar"
+          />
         </div>
       </form>
     </div>

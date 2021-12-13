@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Modal from "../Modal/Modal";
+import list from "../../data/data.json"
 
 export default class Gasoline extends Component {
   render() {
@@ -28,22 +29,19 @@ export default class Gasoline extends Component {
           </div>
         </div>
         <div className="body-card pb-4 px-5">
-          <div className="row item-gasolina py-3">
-            <div className="col-2">
-              <i className="fas fa-gas-pump"></i>
-            </div>
-            <div className="col-4">Corriente</div>
-            <div className="col-3">100</div>
-            <div className="col-3">Activo</div>
-          </div>
-          <div className="row item-gasolina my-3 py-3">
-            <div className="col-2">
-              <i className="fas fa-gas-pump"></i>
-            </div>
-            <div className="col-4">Extra</div>
-            <div className="col-3">100</div>
-            <div className="col-3">Activo</div>
-          </div>
+          {
+            list.gasolines.length &&
+            list.gasolines.map((gasoline) => {
+              return(
+                <div className="row item-gasolina py-3">
+                  <div className="col-2"><i className="fas fa-gas-pump"></i></div>
+                  <div className="col-4">{gasoline.tipe}</div>
+                  <div className="col-3">{gasoline.cant}</div>
+                  <div className="col-3">{gasoline.state}</div>
+                </div>
+              )
+            })
+          }
         </div>
 
         <Modal

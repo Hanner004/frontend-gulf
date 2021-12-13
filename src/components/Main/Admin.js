@@ -10,7 +10,7 @@ export default class Admin extends Component {
     const { user } = this.props;
     return (
       <div className="container-fluid p-5 main">
-        <div className="row main-title px-4" style={{ color: "#4A5759" }}>
+        <div className="row px-4" style={{ color: "#4A5759" }}>
           <h1>
             <b>Hola {user.name},</b>
           </h1>
@@ -19,7 +19,7 @@ export default class Admin extends Component {
         <div className="row px-4">
           <div className="col-sm-6 py-4 pe-5">
             <Gasoline />
-            <Users />
+            <Users role={user.role} />
           </div>
           <div className="col-sm-6 py-4">
             <div className="row mb-4">

@@ -32,15 +32,15 @@ export default function TablaUsuarios(props) {
       <td>
         <strong>
           {usuario.estado === "A" ? (
-            <FontAwesomeIcon icon={faEye} />
+            <FontAwesomeIcon icon={faEye} type="button"/>
           ) : (
-            <FontAwesomeIcon icon={faEyeSlash} />
+            <FontAwesomeIcon icon={faEyeSlash} type="button"/>
           )}
         </strong>
       </td>
       <td>
         <div className="container">
-          <Link className="editar-btn" to={"/gestion-usuarios/editar"}>
+          <Link className="editar-btn" to={`/editUser/${usuario.id}`}>
             <FontAwesomeIcon icon={faEdit} />
           </Link>{" "}
           <button
