@@ -46,9 +46,29 @@ export default class Register extends Component {
             <div className="col">
               <input
                 className="form-control"
+                type="tel"
+                name="tel"
+                placeholder="Teléfono"
+                required
+              />
+            </div>
+          </div>
+          <div className="form-group row p-2 mb-2">
+            <div className="col">
+              <input
+                className="form-control"
+                type="text"
+                name="TipeID"
+                placeholder="Tipo de identificación"
+                required
+              />
+            </div>
+            <div className="col">
+              <input
+                className="form-control"
                 type="number"
                 name="id"
-                placeholder="Identificación"
+                placeholder="Número de identificación"
                 required
               />
             </div>
@@ -59,6 +79,7 @@ export default class Register extends Component {
                 className="form-control"
                 type="password"
                 name="password"
+                minlength="5"
                 placeholder="Contraseña"
                 required
               />

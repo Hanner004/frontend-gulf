@@ -3,7 +3,29 @@ import { Link } from "react-router-dom";
 import "./User.css"
 
 export default function Profile(props){
+  
   const usuario = props.user;
+  function tipeID(tipeID) {
+    switch (tipeID) {
+      case "CA":
+        return "Carnét Diplomático";
+      case "CC":
+        return "Cédula de Ciudadanía";
+      case "CE":
+        return "Cédula de Extranjería";
+      case "PA":
+        return "Pasaporte";
+      case "PEP":
+        return "Permiso Especial de Permanencia";
+      case "PPT":
+        return "Permiso de Protección Temporal";
+      case "TI":
+        return "Tarjeta de Identidad";
+      default:
+        return "Error";
+    }
+  }
+  
   return (
     <div className="container-fluid p-5 main-fixed">
       <div className="row main-title px-4" style={{ color: "#4A5759" }}>
@@ -57,7 +79,7 @@ export default function Profile(props){
                 </label>
                 <p>
                   <i className="fa fa-address-card form-control-feedback" />&nbsp;
-                  Cédula de Ciudadanía
+                  {tipeID(usuario.tipeID)}
                 </p>
               </div>
               <div className="col">

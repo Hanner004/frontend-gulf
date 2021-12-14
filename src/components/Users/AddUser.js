@@ -152,6 +152,7 @@ export default function AddUser(){
               <input
                 id="passwordInput"
                 type="password"
+                minlength="5"
                 className="form-control"
                 placeholder="&#xf023;"
               />
