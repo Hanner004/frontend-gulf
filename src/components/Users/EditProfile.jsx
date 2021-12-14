@@ -125,7 +125,7 @@ export default function EditProfile(props){
 
           <div className="mb-4 row ">
             <div className="col">
-              <label>Contraseña :</label>
+              <label>Contraseña actual :</label>
               <input
                 id="passwordInput"
                 type="password"
@@ -134,10 +134,11 @@ export default function EditProfile(props){
               />
             </div>
             <div className="col">
-              <label>Confirmar contraseña :</label>
+              <label>Nueva contraseña :</label>
               <input
                 id="confPassInput"
                 type="password"
+                minlength="5"
                 className="form-control"
                 placeholder="&#xf023;"
               />
