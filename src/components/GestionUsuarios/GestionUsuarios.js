@@ -1,17 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./GestionUsuarios.css";
 import TablaUsuarios from "./TablaUsuarios";
-import List from "../../data/data.json";
 
 export function GestionUsuarios({role}) {
 
-  // const [data, setData] = useState(List.users);
-  let data = []
-  role === "int" ?
-    List.users.map((user)=>user.rol!="Administrador"&&data.push(user)):
-    data = List.users
+  const [datos, setData] = useState([]);
+  let token = false
+  if (localStorage.getItem("data")) {
+    var data = JSON.parse(localStorage.getItem("data"))
+    token = data.token
+  }
+  
+  function fetchData() {
+    fetch("http://localhost:4000/api/users",{
+      method: 'GET',
+      headers: {'Authorization': 'Bearer '+token},
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        let list = []
+        role === "int" ?
+          data.data.map((user)=>user.role!="admin"&&list.push(user)):
+          list = data.data
+        setData(list)
+      })
+      .catch((err)=>{console.log(err)});
+  }
+
+  useEffect(()=>{
+    fetchData();
+  }, []);
 
   return (
     <div className="gestion px-4">
@@ -38,15 +58,17 @@ export function GestionUsuarios({role}) {
           </thead>
 
           <tbody>
-            {data.map((usuario) => (
-              <TablaUsuarios key={usuario.id} usuario={usuario} />
+            {
+              datos.length > 0 &&
+              datos.map((usuario, index) => (
+                <TablaUsuarios key={usuario._id} num={index+1} usuario={usuario} token={token}/>
             ))}
           </tbody>
         </Table>
       </section>
-      <section className="add-btn">
+      <section className="add-btn pb-4">
         <Link to={"/adduser"}>
-          <button type="submit" className="add-user-btn">
+          <button className="add-user-btn">
             Agregar usuario
           </button>
         </Link>
