@@ -4,7 +4,11 @@ import Navbar from "../components/Navbar/Navbar";
 import List from "../data/data.json";
 
 function Dashboard() {
-  useEffect(()=>document.title="Inicio");
+  useEffect(() => (document.title = "Inicio"));
+
+  var data = JSON.parse(localStorage.getItem("data"));
+  console.log(data);
+
   const [user, setUser] = useState(List.user);
   return (
     <div className="App">

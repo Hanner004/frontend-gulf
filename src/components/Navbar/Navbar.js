@@ -18,6 +18,10 @@ export default class Navbar extends Component {
       }
     }
 
+    const closeSession = () => {
+      localStorage.clear();
+    };
+
     return (
       <div className="container-fluid">
         <nav className="navbar navbar-light bg-white justify-content-between px-5">
@@ -41,7 +45,9 @@ export default class Navbar extends Component {
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item href="/profile">Perfil</Dropdown.Item>
-              <Dropdown.Item href="/login">Cerrar sesión</Dropdown.Item>
+              <Dropdown.Item href="/login" onClick={closeSession}>
+                Cerrar sesión
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </nav>

@@ -33,7 +33,7 @@ export default function Login() {
             timer: 2500,
           });
         } else {
-          localStorage.setItem("user", JSON.stringify(data.data))
+          localStorage.setItem("data", JSON.stringify(data))
           swal({
             title: "Bienvenido",
             text: data.msg,
@@ -89,7 +89,7 @@ export default function Login() {
           </button>
         </div>
         <div className="forgotPwd text-center pt-2">
-          <Link to="/forgotPwd">¿Has olvidado tu contraseña?</Link>
+          <Link to="#">¿Has olvidado tu contraseña?</Link>
           <br />
           <Link to="/register">
             ¿No tienes una cuenta? <span className="bold">Registrate</span>

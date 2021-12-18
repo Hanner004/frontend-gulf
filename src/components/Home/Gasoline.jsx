@@ -33,7 +33,7 @@ export default class Gasoline extends Component {
             list.gasolines.length &&
             list.gasolines.map((gasoline) => {
               return(
-                <div className="row item-gasolina py-3">
+                <div className="row item-gasolina py-3" key={gasoline._id}>
                   <div className="col-2"><i className="fas fa-gas-pump"></i></div>
                   <div className="col-4">{gasoline.tipe}</div>
                   <div className="col-3">{gasoline.cant}</div>
