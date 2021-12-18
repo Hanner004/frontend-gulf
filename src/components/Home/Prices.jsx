@@ -22,31 +22,30 @@ export default class Prices extends Component {
         </div>
 
         <div className="body-card px-3">
-          {
-            list.prices.map((row) => {
-              return (
-                <div className="row item-precio py-3">
-                  <div className="col">{row.initialDate}</div>
-                  <div className="col">{row.finalDate}</div>
-                  <div className="col">${row.corriente}</div>
-                  <div className="col">${row.extra}</div>
-                  <div className="col">
-                    <FontAwesomeIcon 
-                      icon={faEdit} 
-                      type="button"
-                      title="Editar"
-                      data-bs-toggle="modal"
-                      data-bs-target="#editar-precios"
-                      style={{color:'#003845',fontSize:'20px'}}
-                    />
-                  </div>
+          {list.prices.map((row) => {
+            return (
+              <div className="row item-precio py-3" key={row._id}>
+                <div className="col">{row.initialDate}</div>
+                <div className="col">{row.finalDate}</div>
+                <div className="col">${row.corriente}</div>
+                <div className="col">${row.extra}</div>
+                <div className="col">
+                  <FontAwesomeIcon
+                    icon={faEdit}
+                    type="button"
+                    title="Editar"
+                    data-bs-toggle="modal"
+                    data-bs-target="#editar-precios"
+                    style={{ color: "#003845", fontSize: "20px" }}
+                  />
                 </div>
-              );
+              </div>
+            );
           })}
         </div>
         <div className="footer-card py-2">
           <i
-            class="fas fa-plus"
+            className="fas fa-plus"
             type="button"
             title="Agregar"
             data-bs-toggle="modal"

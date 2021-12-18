@@ -44,40 +44,40 @@ export default class Admin extends Component {
           textbtn="Pagar"
           body={
             <>
-              <div class="mb-3">
-                <label class="form-label">Identificación de usuario</label>
+              <div className="mb-3">
+                <label className="form-label">Identificación de usuario</label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Identificación"
                   min="0"
                 />
               </div>
-              <div class="mb-3">
-                <label class="form-label">Vehículo</label>
-                <select class="form-select">
+              <div className="mb-3">
+                <label className="form-label">Vehículo</label>
+                <select className="form-select">
                   {
                     user.cars.length &&
                     user.cars.map((car)=>{
                       return(
-                        <option>{car.model} - {car.placa}</option>
+                        <option key={car._id}>{car.model} - {car.placa}</option>
                       )
                     })
                   }
                 </select>
               </div>
-              <div class="mb-3">
-                <label class="form-label">Tipo de gasolina</label>
-                <select class="form-select">
+              <div className="mb-3">
+                <label className="form-label">Tipo de gasolina</label>
+                <select className="form-select">
                   <option>Gasolina corriente</option>
                   <option>Gasolina extra</option>
                 </select>
               </div>
-              <div class="mb-3">
-                <label class="form-label">Cantidad de gasolina (Galones)</label>
+              <div className="mb-3">
+                <label className="form-label">Cantidad de gasolina (Galones)</label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   placeholder="0"
                   min="0"
                   max="10"
