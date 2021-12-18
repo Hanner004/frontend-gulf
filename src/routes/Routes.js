@@ -35,6 +35,12 @@ function App() {
           <Route path="/login" element={<AuthLogin />}></Route>
           <Route path="/register" element={<AuthRegister />}></Route>
           <Route path="/" element={<AuthLogin />}></Route>
+          <Route path="/adduser" element={<AuthLogin />}></Route>
+          <Route path="/editUser/:id" element={<AuthLogin />}></Route>
+          <Route path="/Profile" element={<AuthLogin />}></Route>
+          <Route path="/editProfile" element={<AuthLogin />}></Route>
+          <Route path="/gestion-usuarios" element={<AuthLogin />}></Route>
+          <Route path="/tanquear" element={<AuthLogin />}></Route>
         </Routes>
       </Router>
     );
