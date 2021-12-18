@@ -7,22 +7,10 @@ export default function Profile(props){
   const usuario = props.user;
   function tipeID(tipeID) {
     switch (tipeID) {
-      case "CA":
-        return "Carnét Diplomático";
-      case "CC":
-        return "Cédula de Ciudadanía";
-      case "CE":
-        return "Cédula de Extranjería";
-      case "PA":
-        return "Pasaporte";
-      case "PEP":
-        return "Permiso Especial de Permanencia";
-      case "PPT":
-        return "Permiso de Protección Temporal";
-      case "TI":
-        return "Tarjeta de Identidad";
-      default:
-        return "Error";
+      case "CC": return "Cédula de Ciudadanía";
+      case "CE": return "Cédula de Extranjería";
+      case "TI": return "Tarjeta de Identidad";
+      default: return "Error";
     }
   }
   
@@ -103,7 +91,7 @@ export default function Profile(props){
               <div className="col">
                 <label className="col-form-label">Teléfono :</label>
                 <p>
-                  <i className="fa fa-phone form-control-feedback" />&nbsp;
+                  <i className="fas fa-phone-alt form-control-feedback" />&nbsp;
                   {usuario.telefono}
                 </p>
               </div>

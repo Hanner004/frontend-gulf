@@ -15,8 +15,8 @@ export default function EditProfile(props){
         <p>Datos básicos</p>
       </div>
 
-      <form action="/" className="form px-4">
-        <div className="mb-5 row photo-user">
+      <form action="/" className="form pt-5 px-4">
+        {/* <div className="mb-5 row photo-user">
           <div className="col-6">
             <label htmlFor="avatarUploader">
               <img
@@ -34,7 +34,7 @@ export default function EditProfile(props){
               id="avatarUploader"
             />
           </div>
-        </div>
+        </div> */}
 
         <div className="data mb-5 px-5">
           <div className="mb-4 row">
@@ -48,12 +48,8 @@ export default function EditProfile(props){
                 required
               >
                 <option value="-">Seleccione</option>
-                <option value="CA">Carnét Diplomático</option>
                 <option value="CC">Cédula de Ciudadanía</option>
                 <option value="CE">Cédula de Extranjería</option>
-                <option value="PA">Pasaporte</option>
-                <option value="PEP">Permiso Especial de Permanencia</option>
-                <option value="PPT">Permiso de Protección Temporal</option>
                 <option value="TI">Tarjeta de Identidad</option>
               </select>
             </div>
@@ -117,7 +113,7 @@ export default function EditProfile(props){
                 type="tel"
                 className="form-control"
                 defaultValue={usuario.telefono}
-                placeholder="&#xf095;"
+                placeholder="&#xf879;"
                 required
               />
             </div>
@@ -134,7 +130,7 @@ export default function EditProfile(props){
               />
             </div>
             <div className="col">
-              <label>Nueva contraseña :</label>
+              <label>Contraseña nueva:</label>
               <input
                 id="confPassInput"
                 type="password"

@@ -67,6 +67,11 @@
     color: black;
 }
 
+.editar-btn:hover {
+    color: black;
+}
+
 .eliminar-btn {
     width: 1px;
+    box-shadow: none !important;
 }
