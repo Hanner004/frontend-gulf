@@ -33,7 +33,7 @@ export default function Login() {
             timer: 2500,
           });
         } else {
-          localStorage.setItem("data", JSON.stringify(data))
+          localStorage.setItem("session", JSON.stringify(data))
           swal({
             title: "Bienvenido",
             text: data.msg,

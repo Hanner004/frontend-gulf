@@ -6,15 +6,13 @@ import List from "../data/data.json";
 function Dashboard() {
   useEffect(() => (document.title = "Inicio"));
 
-  var data = JSON.parse(localStorage.getItem("data"));
-  console.log(data);
-
+  const [session] = useState(JSON.parse(localStorage.getItem("session")));
   const [user, setUser] = useState(List.user);
-  const [token, setToken] = useState(data.token);
+  console.log(session)
   return (
     <div className="App">
       <Navbar user={user} />
-      <Main user={user} token={token}/>
+      <Main user={user} session={session} />
     </div>
   );
 }

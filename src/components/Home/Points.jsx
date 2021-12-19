@@ -8,11 +8,10 @@ export default class Points extends Component {
       <div className="row points-user h-100">
         <div className="card-user points-body p-5">
           <div>
-            <FontAwesomeIcon icon={faStar} style={{fontSize:'60px'}}/>
+            <FontAwesomeIcon icon={faStar} style={{ fontSize: "60px" }} />
             <p>Puntos acumulados</p>
-            <h2 className="fw-bolder">100</h2>
+            <h2 className="fw-bolder">0</h2>
           </div>
-          
         </div>
       </div>
     );

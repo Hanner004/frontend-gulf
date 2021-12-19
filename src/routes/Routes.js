@@ -10,9 +10,8 @@ import EditUser from "../pages/EditUserView";
 import EditProfile from "../pages/EditProfileView";
 
 function App() {
-  var dataSession = JSON.parse(localStorage.getItem("data"));
-
-  if (dataSession) {
+  var session = JSON.parse(localStorage.getItem("session"));
+  if (session) {
     return (
       <Router>
         <Routes>

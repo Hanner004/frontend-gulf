@@ -5,7 +5,7 @@ import Points from "../Home/Points";
 import GasolinePrices from "../Home/GasolinePrices";
 import History from "../Home/History";
 import Vehicles from "../Home/Vehicles";
-import { TanquearExterno } from "../Tanquear/TanquearExterno"
+import { TanquearExterno } from "../Tanquear/TanquearExterno";
 import Modal from "../Modal/Modal";
 
 export default class Ext extends Component {
@@ -65,7 +65,7 @@ export default class Ext extends Component {
           id="tanquear"
           title="Tanquear vehículo"
           textbtn="Pagar"
-          body={<TanquearExterno vehiculos={user.cars}/>}
+          body={<TanquearExterno vehiculos={user.cars} />}
         />
 
         <Modal

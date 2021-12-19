@@ -4,13 +4,14 @@ import Ext from "./Ext";
 import Int from "./Int";
 
 export default function Main(props) {
-  switch (props.user.role) {
+  const { user, session } = props;
+  switch (user.role) {
     case "admin":
-      return <Admin user={props.user} />;
+      return <Admin user={user} session={session} />;
     case "ext":
-      return <Ext user={props.user} />;
+      return <Ext user={user} session={session} />;
     case "int":
-      return <Int user={props.user} />;
+      return <Int user={user} session={session} />;
     default:
       return (
         <div className="main">
