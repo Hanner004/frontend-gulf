@@ -12,7 +12,7 @@ export default class GasolinePrices extends Component {
               list.gasolines.length &&
               list.gasolines.map((gas)=>{
                 return(
-                  <div className="row item-gas-user">
+                  <div key={gas._id} className="row item-gas-user">
                     <div className="col">
                       {gas.tipe}<br /><p>{gas.state}</p> 
                     </div>

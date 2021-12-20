@@ -20,7 +20,7 @@ export default class Vehicles extends Component {
               user.cars &&
               user.cars.map((car)=>{
                 return(
-                  <div style={{minWidth:'12rem', margin:'10px 10px 10px 0'}}>
+                  <div key={car._id} style={{minWidth:'12rem', margin:'10px 10px 10px 0'}}>
                     <div className="item-car car-body p-4">
                       <div>
                         <FontAwesomeIcon icon={faCarAlt} style={{fontSize:'60px'}}/>
@@ -51,28 +51,28 @@ export default class Vehicles extends Component {
         textbtn="Agregar"
         body={
           <>
-          <div class="mb-3">
-            <label class="form-label">Modelo</label>
+          <div className="mb-3">
+            <label className="form-label">Modelo</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="Modelo"
             />
           </div>
-          <div class="mb-3 d-flex">
+          <div className="mb-3 d-flex">
             <div className="w-50 me-2">
-              <label class="form-label">Placa</label>
+              <label className="form-label">Placa</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="Placa"
               />
             </div>
             <div className="w-50 ms-2">
-              <label class="form-label">Capacidad</label>
+              <label className="form-label">Capacidad</label>
               <input
                 type="number"
-                class="form-control"
+                className="form-control"
                 placeholder="0"
                 min="0"
               />

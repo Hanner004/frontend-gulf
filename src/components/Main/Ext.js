@@ -74,11 +74,11 @@ export default class Ext extends Component {
           textbtn="Cargar"
           body={
             <>
-              <div class="mb">
-                <label class="form-label">Cantidad de dinero (Pesos)</label>
+              <div className="mb">
+                <label className="form-label">Cantidad de dinero (Pesos)</label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   placeholder="$"
                   min="0"
                 />
