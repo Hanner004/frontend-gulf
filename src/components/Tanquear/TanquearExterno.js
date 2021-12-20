@@ -2,7 +2,6 @@ import './Tanquear.css';
 
 export function TanquearExterno(props) {
     const vehiculos = props.vehiculos;
-    console.log(vehiculos)
     return (
         <>
             <div className="id-usuario-tanquear input-tanquear">
@@ -10,7 +9,7 @@ export function TanquearExterno(props) {
                     Vehículo:
                 </label>
                 <select>
-                {vehiculos.map( vehiculo => <option value={vehiculo.id}>{vehiculo.model} - {vehiculo.placa}</option>)}
+                    {vehiculos.map( vehiculo => <option key={vehiculo._id} value={vehiculo._id}>{vehiculo.model} - {vehiculo.placa}</option>)}
                 </select>
 
             </div>
