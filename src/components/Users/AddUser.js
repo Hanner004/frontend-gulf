@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Swal from 'sweetalert2'
-import "./User.css"
+import Swal from "sweetalert2";
+import "./User.css";
 
-export default function AddUser(){
-
+export default function AddUser() {
   let history = useNavigate();
   const [tDoc, setTdoc] = useState("");
   const [numDoc, setNumDoc] = useState("");
@@ -16,11 +15,11 @@ export default function AddUser(){
   const [role, setRole] = useState("");
   const [status, setStatus] = useState(true);
   const [confirmation, setConfirmation] = useState("");
-  
-  let token = false
-  if (localStorage.getItem("data")) {
-    var data = JSON.parse(localStorage.getItem("data"))
-    token = data.token
+
+  let token = false;
+  if (localStorage.getItem("session")) {
+    var data = JSON.parse(localStorage.getItem("session"));
+    token = data.token;
   }
 
   const createUser = (e) => {
@@ -35,37 +34,42 @@ export default function AddUser(){
         password: password,
         phone: phone,
         role: role,
-        status: status==="A" ? true : false
+        status: status === "A" ? true : false,
       };
-      fetch("http://localhost:4000/api/users",{
-        method: 'POST',
+      fetch("http://localhost:4000/api/users", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json', 
-          'Authorization': 'Bearer '+token
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
         },
-        body:JSON.stringify(datos),
+        body: JSON.stringify(datos),
+      })
+        .then((response) => {
+          return response.json();
         })
-        .then((response) => {return response.json()})
         .then((data) => {
           if (data.errors) {
-            if (data.errors[0].msg==="El usuario se encuentra registrado")
+            if (data.errors[0].msg === "El usuario se encuentra registrado")
               Swal.fire({
-                icon: 'error',
+                icon: "error",
                 text: data.errors[0].msg,
-                confirmButtonColor: '#20515C'
-              })
+                confirmButtonColor: "#20515C",
+              });
+          } else {
+            history("/gestion-usuarios");
           }
-          else{history('/gestion-usuarios')}
         })
-        .catch((err)=>{console.log(err)});
-    }else{
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
       Swal.fire({
-        icon: 'error',
-        text: 'Las contraseñas deben ser iguales!',
-        confirmButtonColor: '#20515C'
-      })
+        icon: "error",
+        text: "Las contraseñas deben ser iguales!",
+        confirmButtonColor: "#20515C",
+      });
     }
-  }
+  };
 
   return (
     <div className="container-fluid p-5 main-User">
@@ -105,26 +109,30 @@ export default function AddUser(){
                 id="tDocInput"
                 className="form-select"
                 placeholder="Tipo de Documento"
-                onChange={(e) => {setTdoc(e.target.value)}}
+                onChange={(e) => {
+                  setTdoc(e.target.value);
+                }}
                 required
               >
-                <option selected disabled value="">Seleccione</option>
+                <option selected disabled value="">
+                  Seleccione
+                </option>
                 <option value="CC">Cédula de Ciudadanía</option>
                 <option value="CE">Cédula de Extranjería</option>
                 <option value="TI">Tarjeta de Identidad</option>
               </select>
             </div>
             <div className="col">
-              <label>
-                Número de documento de identificación :
-              </label>
+              <label>Número de documento de identificación :</label>
               <input
                 id="nDocInput"
                 type="number"
                 className="form-control"
                 min="0"
                 placeholder="&#xf47f;"
-                onChange={(e) => {setNumDoc(e.target.value)}}
+                onChange={(e) => {
+                  setNumDoc(e.target.value);
+                }}
                 required
               />
             </div>
@@ -139,7 +147,9 @@ export default function AddUser(){
                 className="form-control"
                 placeholder="&#xf406;"
                 pattern="[a-zA-Z ]+"
-                onChange={(e) => {setName(e.target.value)}}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
                 required
               />
             </div>
@@ -151,7 +161,9 @@ export default function AddUser(){
                 className="form-control"
                 placeholder="&#xf406;"
                 pattern="[a-zA-Z ]+"
-                onChange={(e) => {setLastname(e.target.value)}}
+                onChange={(e) => {
+                  setLastname(e.target.value);
+                }}
                 required
               />
             </div>
@@ -165,7 +177,9 @@ export default function AddUser(){
                 type="email"
                 className="form-control"
                 placeholder="&#xf1fa;"
-                onChange={(e) => {setEmail(e.target.value)}}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
                 required
               />
             </div>
@@ -177,7 +191,9 @@ export default function AddUser(){
                 className="form-control"
                 placeholder="&#xf879;"
                 pattern="[0-9]+"
-                onChange={(e) => {setPhone(e.target.value)}}
+                onChange={(e) => {
+                  setPhone(e.target.value);
+                }}
                 required
               />
             </div>
@@ -190,10 +206,14 @@ export default function AddUser(){
                 id="rolInput"
                 className="form-select"
                 placeholder="Rol"
-                onChange={(e) => {setRole(e.target.value)}}
+                onChange={(e) => {
+                  setRole(e.target.value);
+                }}
                 required
               >
-                <option selected disabled value="">Seleccione</option>
+                <option selected disabled value="">
+                  Seleccione
+                </option>
                 <option value="admin">Administrador</option>
                 <option value="ext">Usuario Externo - Cliente</option>
                 <option value="int">Usuario Interno - Empleado</option>
@@ -204,10 +224,14 @@ export default function AddUser(){
               <select
                 id="stateInput"
                 className="form-select"
-                onChange={(e) => {setStatus(e.target.value)}}
+                onChange={(e) => {
+                  setStatus(e.target.value);
+                }}
                 required
               >
-                <option selected disabled value="">Seleccione</option>
+                <option selected disabled value="">
+                  Seleccione
+                </option>
                 <option value="A">Habilitado</option>
                 <option value="I">Inhabilitado</option>
               </select>
@@ -223,7 +247,9 @@ export default function AddUser(){
                 minlength="5"
                 className="form-control"
                 placeholder="&#xf023;"
-                onChange={(e) => {setPassword(e.target.value)}}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
                 required
               />
             </div>
@@ -234,7 +260,9 @@ export default function AddUser(){
                 type="password"
                 className="form-control"
                 placeholder="&#xf023;"
-                onChange={(e) => {setConfirmation(e.target.value)}}
+                onChange={(e) => {
+                  setConfirmation(e.target.value);
+                }}
                 required
               />
             </div>
@@ -242,20 +270,13 @@ export default function AddUser(){
         </div>
 
         <div className="mb-4 row py-4 px-5 justify-content-center">
-          <input
-            type="submit"
-            className="btn px-4 btn-gulf"
-            value="Agregar"
-          />
-          <input
-            type="reset"
-            className="btn px-4 btn-gulf"
-            value="Borrar"
-          />
+          <input type="submit" className="btn px-4 btn-gulf" value="Agregar" />
+          <input type="reset" className="btn px-4 btn-gulf" value="Borrar" />
           <Link
             type="button"
             to="/gestion-usuarios"
-            className="btn px-4 btn-gulf">
+            className="btn px-4 btn-gulf"
+          >
             Cancelar
           </Link>
         </div>

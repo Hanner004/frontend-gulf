@@ -56,14 +56,14 @@ export default class Int extends Component {
               <div class="mb-3">
                 <label class="form-label">Vehículo</label>
                 <select class="form-select">
-                  {
+                  {/* {
                     user.cars.length &&
                     user.cars.map((car)=>{
                       return(
                         <option>{car.model} - {car.placa}</option>
                       )
                     })
-                  }
+                  } */}
                 </select>
               </div>
               <div class="mb-3">

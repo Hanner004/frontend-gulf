@@ -10,7 +10,7 @@ export default class Money extends Component {
           <div>
             <FontAwesomeIcon icon={faDollarSign} style={{fontSize:'60px'}}/>
             <p>Saldo disponible</p>
-            <h2 className="fw-bolder">$100.000</h2>
+            <h2 className="fw-bolder">${this.props.user.wallet.money}</h2>
           </div>
         </div>
       </div>

@@ -19,13 +19,13 @@ export default class History extends Component {
               <div className="col-3">Valor</div>
             </div>
             <div className="table-history-body">
-              {user.history &&
-                user.history.map((his, i) => {
+              {user.wallet.history &&
+                user.wallet.history.map((his, i) => {
                   return (
                     <div key={i} className="row py-3">
                       <div className="col-5">{his.action}</div>
-                      <div className="col-4">{his.date}</div>
-                      <div className="col-3">{his.value}</div>
+                      <div className="col-4">{this.formatDate(his.date)}</div>
+                      <div className="col-3">${his.value}</div>
                     </div>
                   );
                 })}

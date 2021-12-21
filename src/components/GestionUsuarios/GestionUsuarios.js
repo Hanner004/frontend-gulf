@@ -8,8 +8,8 @@ export function GestionUsuarios({role}) {
 
   const [datos, setData] = useState([]);
   let token = false
-  if (localStorage.getItem("data")) {
-    var data = JSON.parse(localStorage.getItem("data"))
+  if (localStorage.getItem("session")) {
+    var data = JSON.parse(localStorage.getItem("session"))
     token = data.token
   }
   

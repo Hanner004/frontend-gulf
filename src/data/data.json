@@ -51,7 +51,7 @@
     }
   ],
   "user": {
-    "role": "ext",
+    "role": "admin",
     "name": "Equipo 9",
     "fullname": "Mendoza Romero",
     "tipeID": "CC",

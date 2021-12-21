@@ -1,30 +1,41 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Main from "../components/Main/Main";
 import Navbar from "../components/Navbar/Navbar";
-import List from "../data/data.json";
 
 function Dashboard() {
   useEffect(() => (document.title = "Inicio"));
 
   const [session] = useState(JSON.parse(localStorage.getItem("session")));
+  const [user, setUser] = useState({});
   const token = session.token;
-  let user_data = [];
-  fetch(`api/users/${session.data._id}`, {
-    method: 'GET',
-    headers : { 
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-     }, 
-    token: "Bearer " + token
-  })
-  .then(res => res.json())
-  .then(res => console.log('aqui', res))
-  .catch(err => console.log(err))
-  //console.log('aqui', user_data)
-  //console.log('-->',session.data)
 
-  const [user, setUser] = useState(List.user);
-  //console.log(session)
+  const getUser = async () => {
+    let URL = `http://localhost:4000/api/users/${session.data._id}`;
+    let data = {};
+    let config = {
+      headers: {
+        authorization: "Bearer " + token,
+      },
+    };
+    await axios
+      .get(URL, config)
+      .then((response) => {
+        console.log({
+          user: response.data.data,
+        });
+        setUser(response.data.data);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
+  useEffect(() => {
+    getUser();
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <div className="App">
       <Navbar user={user} />

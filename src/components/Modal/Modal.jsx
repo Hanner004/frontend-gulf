@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import "./modal.css";
 
-export default function Modal({ id, title, textbtn, body }) {
+export default function Modal({ id, title, textbtn, body, submit }) {
   return (
     <div className="modal fade" id={id}>
       <div className="modal-dialog modal-dialog-centered">
@@ -15,19 +15,21 @@ export default function Modal({ id, title, textbtn, body }) {
               aria-label="Close"
             ></button>
           </div>
-          <div className="modal-body">{body}</div>
-          <div className="modal-footer">
-            <button
-              type="button"
-              className="btn secondary btn-sm px-4"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-            <button type="button" className="btn primary btn-sm px-4">
-              {textbtn}
-            </button>
-          </div>
+          <form onSubmit={submit}>
+            <div className="modal-body">{body}</div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn secondary btn-sm px-4"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button type="submit" className="btn primary btn-sm px-4">
+                {textbtn}
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
