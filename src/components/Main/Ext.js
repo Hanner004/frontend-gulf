@@ -117,7 +117,7 @@ export default function Ext(props) {
               <Points />
             </div>
             <div className="col-sm py-4 pe-5">
-              <GasolinePrices />
+              <GasolinePrices user={user} session={session} />
             </div>
           </div>
           <div className="row mx-3 main-vehicle">
@@ -162,8 +162,12 @@ export default function Ext(props) {
                 onChange={(e) => {
                   setIdVehicle(e.target.value);
                 }}
+                value={idVehicle}
                 required
               >
+                <option selected disabled value="">
+                  Seleccione
+                </option>
                 {vehicles.map((vehicle) => (
                   <option key={vehicle._id} value={vehicle._id}>
                     {vehicle.model} - {vehicle.placa}
@@ -179,8 +183,12 @@ export default function Ext(props) {
                   onChange={(e) => {
                     setTGasoline(e.target.value);
                   }}
+                  value={tGasoline}
                   required
                 >
+                  <option selected disabled value="">
+                    Seleccione
+                  </option>
                   <option value="Extra">Gasolina extra</option>
                   <option value="Corriente">Gasolina corriente</option>
                 </select>
