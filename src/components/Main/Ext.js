@@ -12,26 +12,38 @@ export default function Ext(props) {
   const { user, session } = props;
   const [vehicles, setVehicles] = useState([]);
 
-  const getVehicles = async () => {
-    let URL = `http://localhost:4000/api/vehicles/users/${user._id}`;
-    let data = {};
-    let config = {
-      headers: {
-        authorization: "Bearer " + session.token,
-      },
-    };
-    await axios
-      .get(URL, config)
-      .then((response) => {
-        console.log({
-          vehicles: response.data.data,
-        });
-        setVehicles(response.data.data);
+  // const getVehicles = async () => {
+  //   let URL = `http://localhost:4000/api/vehicles/users/${user._id}`;
+  //   let data = {};
+  //   let config = {
+  //     headers: {
+  //       authorization: "Bearer " + session.token,
+  //     },
+  //   };
+  //   await axios
+  //     .get(URL, config)
+  //     .then((response) => {
+  //       console.log({
+  //         vehicles: response.data.data,
+  //       });
+  //       setVehicles(response.data.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.message);
+  //     });
+  // };
+
+  function getVehicles() {
+    fetch("http://localhost:4000/api/vehicles/users/"+user._id,{
+      method: 'GET',
+      headers: {'Authorization': 'Bearer '+session.token},
       })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
+      .then((response) => response.json())
+      .then((data) => {
+        setVehicles(data.data)
+      })
+      .catch((err)=>{console.log(err)});
+  }
 
   const [money, setMoney] = useState("");
 
@@ -83,7 +95,7 @@ export default function Ext(props) {
   useEffect(() => {
     getVehicles();
     // eslint-disable-next-line
-  }, []);
+  });
 
   return (
     <div className="container-fluid p-5 main">

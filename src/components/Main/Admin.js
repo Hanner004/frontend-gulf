@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./main.css";
 import Gasoline from "../Home/Gasoline";
 import Users from "../Home/Users";
@@ -6,7 +6,35 @@ import Prices from "../Home/Prices";
 import Modal from "../Modal/Modal";
 
 export default function Admin(props) {
-  const { user } = props;
+  const { user, session } = props;
+  const [vehicles, setVehicles] = useState([]);
+  const [docClient, setDocClient] = useState([]);
+
+  function getClient() {
+    fetch("http://localhost:4000/api/users",{
+      method: 'GET',
+      headers: {'Authorization': 'Bearer '+session.token},
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        let client = data.data.find(user => user.numDoc === docClient);
+        getVehicles(client._id)
+      })
+      .catch((err)=>{console.log(err)});
+  }
+
+  function getVehicles(idClient) {
+    fetch("http://localhost:4000/api/vehicles/users/"+idClient,{
+      method: 'GET',
+      headers: {'Authorization': 'Bearer '+session.token},
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        setVehicles(data.data)
+      })
+      .catch((err)=>{console.log(err)});
+  }
+
   return (
     <div className="container-fluid p-5 main">
       <div className="row px-4" style={{ color: "#4A5759" }}>
@@ -18,7 +46,7 @@ export default function Admin(props) {
       <div className="row px-4">
         <div className="col-sm-6 py-4 pe-5">
           <Gasoline />
-          <Users role={user.role} />
+          <Users role={user.role} token={session.token}/>
         </div>
         <div className="col-sm-6 py-4">
           <div className="row mb-4">
@@ -47,27 +75,32 @@ export default function Admin(props) {
               <label className="form-label">Identificación de usuario</label>
               <input
                 type="number"
+                id="inputId"
                 className="form-control"
                 placeholder="Identificación"
                 min="0"
+                required
+                onChange={(e) => {setDocClient(e.target.value)}}
               />
             </div>
             <div className="mb-3">
               <label className="form-label">Vehículo</label>
-              <select className="form-select">
-                {/* {user.cars.length &&
-                  user.cars.map((car) => {
-                    return (
-                      <option key={car._id}>
-                        {car.model} - {car.placa}
-                      </option>
-                    );
-                  })} */}
+              <select className="form-select" required onClick={() => getClient()}>
+                <option selected disabled> Seleccione </option>
+                {
+                  vehicles && vehicles.length &&
+                    vehicles.map((car)=>{
+                      return(
+                        <option key={car._id}>{car.model} - {car.placa}</option>
+                      )
+                    })
+                }
               </select>
             </div>
             <div className="mb-3">
               <label className="form-label">Tipo de gasolina</label>
-              <select className="form-select">
+              <select className="form-select" required>
+                <option selected disabled> Seleccione </option>
                 <option>Gasolina corriente</option>
                 <option>Gasolina extra</option>
               </select>
@@ -82,6 +115,7 @@ export default function Admin(props) {
                 placeholder="0"
                 min="0"
                 max="10"
+                required
               />
             </div>
           </>

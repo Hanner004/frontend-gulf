@@ -38,7 +38,7 @@ function Dashboard() {
 
   return (
     <div className="App">
-      <Navbar user={user} />
+      <Navbar user={user} session={session}/>
       <Main user={user} session={session} />
     </div>
   );
