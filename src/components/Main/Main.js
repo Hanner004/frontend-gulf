@@ -4,10 +4,10 @@ import Ext from "./Ext";
 import Int from "./Int";
 
 export default function Main(props) {
-  const { user, session } = props;
+  const { user, session, prices } = props;
   switch (user.role) {
     case "admin":
-      return <Admin user={user} session={session} />;
+      return <Admin user={user} session={session} prices={prices}/>;
     case "ext":
       return <Ext user={user} session={session} />;
     case "int":

@@ -6,7 +6,7 @@ import Prices from "../Home/Prices";
 import Modal from "../Modal/Modal";
 
 export default function Admin(props) {
-  const { user } = props;
+  const { user, prices } = props;
   return (
     <div className="container-fluid p-5 main">
       <div className="row px-4" style={{ color: "#4A5759" }}>
@@ -33,7 +33,7 @@ export default function Admin(props) {
               </button>
             </div>
           </div>
-          <Prices />
+          <Prices prices={prices}/>
         </div>
       </div>
 

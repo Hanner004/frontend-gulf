@@ -3,9 +3,12 @@ import Modal from "../Modal/Modal";
 import list from "../../data/data.json";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ListGroup } from "react-bootstrap";
 
 export default class Prices extends Component {
+  
   render() {
+    const prices = this.props.prices;
     return (
       <div className="row card-precios vstack">
         <div className="header-card px-3">
@@ -22,7 +25,7 @@ export default class Prices extends Component {
         </div>
 
         <div className="body-card px-3">
-          {list.prices.map((row) => {
+          {prices.length > 0 && prices.map( row => {
             return (
               <div className="row item-precio py-3" key={row._id}>
                 <div className="col">{row.initialDate}</div>
