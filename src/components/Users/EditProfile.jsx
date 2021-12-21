@@ -16,6 +16,7 @@ export default function EditProfile({session}){
   const [phone, setPhone] = useState(0);
   const [password, setPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
+  const [confirmation, setConfirmation] = useState("");
   let history = useNavigate();
 
   function getUser() {
@@ -40,7 +41,7 @@ export default function EditProfile({session}){
     getUser();
   },[]);
 
-  function Fetch(datos) {
+  function fetchData(datos) {
     fetch("http://localhost:4000/api/users/" + idUser,{
       method: 'PUT',
       headers: {
@@ -70,35 +71,56 @@ export default function EditProfile({session}){
       .catch((err)=>{console.log(err)});
   }
 
+  function fetchPass() {
+    fetch("http://localhost:4000/api/users/"+idUser+"/updatePass",{
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json', 
+        'Authorization': 'Bearer '+session.token
+      },
+      body:JSON.stringify({password:newPassword}),
+      })
+      .then((response) => {return response.json()})
+      .then((data) => {
+        Swal.fire({
+          icon: 'success',
+          text: 'Datos actualizados',
+          confirmButtonColor: '#20515C'
+        })
+        history('/Profile')
+      })
+      .catch((err)=>{console.log(err)});
+  }
+
   const updateProfile = (e) => {
     e.preventDefault();
+    let datos = {
+      tDoc: tDoc,
+      numDoc: numDoc,
+      name: name,
+      lastname: lastname,
+      email: email,
+      phone: phone,
+    };
     if (password.length === 0) {
-      let datos = {
-        tDoc: tDoc,
-        numDoc: numDoc,
-        name: name,
-        lastname: lastname,
-        email: email,
-        phone: phone,
-      };
-      Fetch(datos)
+      fetchData(datos)
     } else {
       if (bcrypt.compareSync(password, user.password)){
         if (newPassword.length != 0) {
-          let datos = {
-            tDoc: tDoc,
-            numDoc: numDoc,
-            name: name,
-            lastname: lastname,
-            email: email,
-            phone: phone,
-            password: newPassword,
-          };
-          Fetch(datos)
+          if (newPassword == confirmation) {
+            fetchData(datos)
+            fetchPass()
+          }else{
+            Swal.fire({
+              icon: 'error',
+              text: 'La confirmación de contraseña no coincide',
+              confirmButtonColor: '#20515C'
+            })
+          }
         }else{
           Swal.fire({
-            icon: 'error',
-            text: 'Escribir contraseña nueva',
+            icon: 'warning',
+            text: 'Contraseña nueva requerida',
             confirmButtonColor: '#20515C'
           })
         }
@@ -110,8 +132,6 @@ export default function EditProfile({session}){
         })
       }
     }
-    
-    
   }
 
   return (
@@ -248,12 +268,22 @@ export default function EditProfile({session}){
             <div className="col">
               <label>Contraseña nueva:</label>
               <input
-                id="confPassInput"
+                id="newPassInput"
                 type="password"
                 minlength="5"
                 className="form-control"
                 placeholder="&#xf023;"
                 onChange={(e)=>setNewPassword(e.target.value)}
+              />
+            </div>
+            <div className="col">
+              <label>Confirmación de contraseña:</label>
+              <input
+                id="confPassInput"
+                type="password"
+                className="form-control"
+                placeholder="&#xf023;"
+                onChange={(e)=>setConfirmation(e.target.value)}
               />
             </div>
           </div>
