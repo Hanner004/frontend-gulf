@@ -34,15 +34,17 @@ export default function Ext(props) {
   // };
 
   function getVehicles() {
-    fetch("http://localhost:4000/api/vehicles/users/"+user._id,{
-      method: 'GET',
-      headers: {'Authorization': 'Bearer '+session.token},
-      })
+    fetch("http://localhost:4000/api/vehicles/users/" + user._id, {
+      method: "GET",
+      headers: { Authorization: "Bearer " + session.token },
+    })
       .then((response) => response.json())
       .then((data) => {
-        setVehicles(data.data)
+        setVehicles(data.data);
       })
-      .catch((err)=>{console.log(err)});
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   const [money, setMoney] = useState("");
@@ -72,7 +74,7 @@ export default function Ext(props) {
   const [gallons, setGallons] = useState("");
 
   const tankExtVehicle = async () => {
-    let URL = `http://localhost:4000/api/vehicles/${idVehicle}/tank`;
+    let URL = `http://localhost:4000/api/vehicles/${idVehicle}/tank/users/${user._id}`;
     let data = {
       type: tGasoline,
       gallons,
