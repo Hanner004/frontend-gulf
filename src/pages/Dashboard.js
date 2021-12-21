@@ -8,7 +8,7 @@ function Dashboard() {
 
   const [session] = useState(JSON.parse(localStorage.getItem("session")));
   const [user, setUser] = useState({});
-  const [prices, setPrices] = useState({});
+  const [prices, setPrices] = useState([]);
   const token = session.token;
 
   const getUser = async () => {
