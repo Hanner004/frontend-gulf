@@ -9,7 +9,7 @@ export default class Points extends Component {
         <div className="card-user points-body p-5">
           <div>
             <FontAwesomeIcon icon={faStar} style={{ fontSize: "60px" }} />
-            <p>Puntos acumulados</p>
+            <p>Puntos Acumulados</p>
             <h2 className="fw-bolder">0</h2>
           </div>
         </div>
