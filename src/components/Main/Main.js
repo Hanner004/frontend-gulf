@@ -5,7 +5,7 @@ import Int from "./Int";
 
 export default function Main(props) {
   const { user, session, prices } = props;
-  switch (user.role) {
+  switch (session.data.role) {
     case "admin":
       return <Admin user={user} session={session} prices={prices} />;
     case "ext":

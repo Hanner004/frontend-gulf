@@ -43,7 +43,6 @@ export default function Prices({prices}) {
 
   /* EDITAR PRECIOS PARA LA GASOLINA EN RANGOS DE FECHAS*/
   const editPrices = async () => {
-    console.log(id)
     const URL_PRICES = `http://localhost:4000/api/price/${id}`;
     let data = {
       initialDate,
@@ -65,13 +64,15 @@ export default function Prices({prices}) {
       .catch((error) => {
         console.log(error.message);
       });
+    
   }
 
 
   /* FORMATO FECHA Y DINERO */
   function formatDate(date) {
     var res = new Date(date);
-    return res.toLocaleString();
+    res = res.toLocaleString().split(',')[0].split('/')
+    return res[1] + '/' + res[0] + '/' + res[2];
   }
 
   function formatDec(dat) {
@@ -106,6 +107,7 @@ export default function Prices({prices}) {
                   icon={faEdit}
                   type="button"
                   title="Editar"
+                  onClick={() => setId(row._id)}
                   data-bs-toggle="modal"
                   data-bs-target="#editar-precios"
                   style={{ color: "#003845", fontSize: "20px" }}
@@ -140,6 +142,8 @@ export default function Prices({prices}) {
                 <div className="col-sm-7">
                   <input
                     type="date"
+                    data-date-format="DD MMMM YYYY"
+                    min="2017-04-01"
                     className="form-control"
                     onChange={(e) => {
                       setInitialDate(e.target.value);

@@ -13,7 +13,6 @@ function Dashboard() {
 
   const getUser = async () => {
     let URL = `http://localhost:4000/api/users/${session.data._id}`;
-    let data = {};
     let config = {
       headers: {
         authorization: "Bearer " + token,
