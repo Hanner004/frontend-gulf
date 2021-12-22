@@ -1,118 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Swal from 'sweetalert2';
-import bcrypt from 'bcryptjs';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./User.css"
 
-export default function EditProfile({session}){
+export default function EditProfile(props){
 
-  const idUser = session.data._id;
-  const [user, setUser] = useState([])
-  const [tDoc, setTdoc] = useState("");
-  const [numDoc, setNumDoc] = useState("");
-  const [name, setName] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState(0);
-  const [password, setPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  let history = useNavigate();
-
-  function getUser() {
-    fetch("http://localhost:4000/api/users/"+idUser,{
-      method: 'GET',
-      headers: {'Authorization': 'Bearer '+session.token},
-      })
-      .then((response) => response.json())
-      .then((data) => {
-        setUser(data.data)
-        setTdoc(data.data.tDoc)
-        setNumDoc(data.data.numDoc)
-        setName(data.data.name)
-        setLastname(data.data.lastname)
-        setEmail(data.data.email)
-        setPhone(data.data.phone)
-      })
-      .catch((err)=>{console.log(err)});
-  }
-  
-  useEffect(()=>{
-    getUser();
-  },[]);
-
-  function Fetch(datos) {
-    fetch("http://localhost:4000/api/users/" + idUser,{
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json', 
-        'Authorization': 'Bearer '+session.token
-      },
-      body:JSON.stringify(datos),
-      })
-      .then((response) => {return response.json()})
-      .then((data) => {
-        if (data.errors) {
-          if (data.errors[0].msg==="El usuario se encuentra registrado")
-            Swal.fire({
-              icon: 'error',
-              text: data.errors[0].msg,
-              confirmButtonColor: '#20515C'
-            })
-        }
-        else{
-          Swal.fire({
-            icon: 'success',
-            text: 'Datos actualizados',
-            confirmButtonColor: '#20515C'
-          })
-          history('/Profile')}
-      })
-      .catch((err)=>{console.log(err)});
-  }
-
-  const updateProfile = (e) => {
-    e.preventDefault();
-    if (password.length === 0) {
-      let datos = {
-        tDoc: tDoc,
-        numDoc: numDoc,
-        name: name,
-        lastname: lastname,
-        email: email,
-        phone: phone,
-      };
-      Fetch(datos)
-    } else {
-      if (bcrypt.compareSync(password, user.password)){
-        if (newPassword.length != 0) {
-          let datos = {
-            tDoc: tDoc,
-            numDoc: numDoc,
-            name: name,
-            lastname: lastname,
-            email: email,
-            phone: phone,
-            password: newPassword,
-          };
-          Fetch(datos)
-        }else{
-          Swal.fire({
-            icon: 'error',
-            text: 'Escribir contraseña nueva',
-            confirmButtonColor: '#20515C'
-          })
-        }
-      }else{
-        Swal.fire({
-          icon: 'error',
-          text: 'Contraseña actual incorrecta',
-          confirmButtonColor: '#20515C'
-        })
-      }
-    }
-    
-    
-  }
+  const usuario = props.user;
 
   return (
     <div className="container-fluid p-5 main-User">
@@ -123,7 +15,7 @@ export default function EditProfile({session}){
         <p>Datos básicos</p>
       </div>
 
-      <form className="form pt-5 px-4" onSubmit={updateProfile}>
+      <form action="/" className="form pt-5 px-4">
         {/* <div className="mb-5 row photo-user">
           <div className="col-6">
             <label htmlFor="avatarUploader">
@@ -145,7 +37,6 @@ export default function EditProfile({session}){
         </div> */}
 
         <div className="data mb-5 px-5">
-          <label className="mb-4 fs-3">Editar datos personales :</label>
           <div className="mb-4 row">
             <div className="col">
               <label>Tipo de documento :</label>
@@ -153,10 +44,10 @@ export default function EditProfile({session}){
                 id="tDocInput"
                 className="form-select"
                 placeholder="Tipo de Documento"
-                value={tDoc}
-                onChange={(e)=>setTdoc(e.target.value)}
+                defaultValue={usuario.tipeID}
                 required
               >
+                <option value="-">Seleccione</option>
                 <option value="CC">Cédula de Ciudadanía</option>
                 <option value="CE">Cédula de Extranjería</option>
                 <option value="TI">Tarjeta de Identidad</option>
@@ -171,9 +62,8 @@ export default function EditProfile({session}){
                 type="number"
                 className="form-control"
                 min="0"
+                defaultValue={usuario.identificacion}
                 placeholder="&#xf47f;"
-                value={numDoc}
-                onChange={(e)=>setNumDoc(e.target.value)}
                 required
               />
             </div>
@@ -186,9 +76,8 @@ export default function EditProfile({session}){
                 id="namedInput"
                 type="text"
                 className="form-control"
+                defaultValue={usuario.name}
                 placeholder="&#xf406;"
-                value={name}
-                onChange={(e)=>setName(e.target.value)}
                 required
               />
             </div>
@@ -198,9 +87,8 @@ export default function EditProfile({session}){
                 id="lastnamedInput"
                 type="text"
                 className="form-control"
+                defaultValue={usuario.fullname}
                 placeholder="&#xf406;"
-                value={lastname}
-                onChange={(e)=>setLastname(e.target.value)}
                 required
               />
             </div>
@@ -213,9 +101,8 @@ export default function EditProfile({session}){
                 id="emailInput"
                 type="email"
                 className="form-control"
+                defaultValue={usuario.email}
                 placeholder="&#xf1fa;"
-                value={email}
-                onChange={(e)=>setEmail(e.target.value)}
                 required
               />
             </div>
@@ -225,15 +112,13 @@ export default function EditProfile({session}){
                 id="phoneInput"
                 type="tel"
                 className="form-control"
+                defaultValue={usuario.telefono}
                 placeholder="&#xf879;"
-                value={phone}
-                onChange={(e)=>setPhone(e.target.value)}
                 required
               />
             </div>
           </div>
 
-          <label className="mt-5 mb-4 fs-3">Editar contraseña :</label>
           <div className="mb-4 row ">
             <div className="col">
               <label>Contraseña actual :</label>
@@ -242,7 +127,6 @@ export default function EditProfile({session}){
                 type="password"
                 className="form-control"
                 placeholder="&#xf023;"
-                onChange={(e)=>setPassword(e.target.value)}
               />
             </div>
             <div className="col">
@@ -253,7 +137,6 @@ export default function EditProfile({session}){
                 minlength="5"
                 className="form-control"
                 placeholder="&#xf023;"
-                onChange={(e)=>setNewPassword(e.target.value)}
               />
             </div>
           </div>
@@ -267,7 +150,7 @@ export default function EditProfile({session}){
             Cancelar
           </Link>
           <input
-            type="submit"
+            type="button"
             className="btn px-4 btn-gulf"
             value="Guardar"
           />
