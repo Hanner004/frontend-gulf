@@ -6,10 +6,11 @@ import List from "../data/data.json";
 function EditProfileView() {
   useEffect(()=>document.title="Editar perfil");
   const [user, setUser] = useState(List.user);
+  const [session] = useState(JSON.parse(localStorage.getItem("session")));
   return (
     <div className="App">
-      <Navbar user={user} />
-      <EditProfile user={user} />
+      <Navbar user={user} session={session}/>
+      <EditProfile user={user} session={session}/>
     </div>
   );
 }

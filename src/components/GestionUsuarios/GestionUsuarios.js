@@ -59,7 +59,7 @@ export function GestionUsuarios({role}) {
 
           <tbody>
             {
-              datos.length > 0 &&
+              datos && datos.length > 0 &&
               datos.map((usuario, index) => (
                 <TablaUsuarios key={usuario._id} num={index+1} usuario={usuario} token={token}/>
             ))}

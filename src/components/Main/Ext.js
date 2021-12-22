@@ -12,26 +12,40 @@ export default function Ext(props) {
   const { user, session } = props;
   const [vehicles, setVehicles] = useState([]);
 
-  const getVehicles = async () => {
-    let URL = `http://localhost:4000/api/vehicles/users/${user._id}`;
-    let data = {};
-    let config = {
-      headers: {
-        authorization: "Bearer " + session.token,
-      },
-    };
-    await axios
-      .get(URL, config)
-      .then((response) => {
-        console.log({
-          vehicles: response.data.data,
-        });
-        setVehicles(response.data.data);
+  // const getVehicles = async () => {
+  //   let URL = `http://localhost:4000/api/vehicles/users/${user._id}`;
+  //   let data = {};
+  //   let config = {
+  //     headers: {
+  //       authorization: "Bearer " + session.token,
+  //     },
+  //   };
+  //   await axios
+  //     .get(URL, config)
+  //     .then((response) => {
+  //       console.log({
+  //         vehicles: response.data.data,
+  //       });
+  //       setVehicles(response.data.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.message);
+  //     });
+  // };
+
+  function getVehicles() {
+    fetch("http://localhost:4000/api/vehicles/users/" + user._id, {
+      method: "GET",
+      headers: { Authorization: "Bearer " + session.token },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setVehicles(data.data);
       })
-      .catch((error) => {
-        console.log(error.message);
+      .catch((err) => {
+        console.log(err);
       });
-  };
+  }
 
   const [money, setMoney] = useState("");
 
@@ -60,7 +74,7 @@ export default function Ext(props) {
   const [gallons, setGallons] = useState("");
 
   const tankExtVehicle = async () => {
-    let URL = `http://localhost:4000/api/vehicles/${idVehicle}/tank`;
+    let URL = `http://localhost:4000/api/vehicles/${idVehicle}/tank/users/${user._id}`;
     let data = {
       type: tGasoline,
       gallons,
@@ -83,7 +97,7 @@ export default function Ext(props) {
   useEffect(() => {
     getVehicles();
     // eslint-disable-next-line
-  }, []);
+  });
 
   return (
     <div className="container-fluid p-5 main">
@@ -105,7 +119,7 @@ export default function Ext(props) {
               <Points />
             </div>
             <div className="col-sm py-4 pe-5">
-              <GasolinePrices />
+              <GasolinePrices user={user} session={session} />
             </div>
           </div>
           <div className="row mx-3 main-vehicle">
@@ -150,8 +164,12 @@ export default function Ext(props) {
                 onChange={(e) => {
                   setIdVehicle(e.target.value);
                 }}
+                value={idVehicle}
                 required
               >
+                <option selected disabled value="">
+                  Seleccione
+                </option>
                 {vehicles.map((vehicle) => (
                   <option key={vehicle._id} value={vehicle._id}>
                     {vehicle.model} - {vehicle.placa}
@@ -167,8 +185,12 @@ export default function Ext(props) {
                   onChange={(e) => {
                     setTGasoline(e.target.value);
                   }}
+                  value={tGasoline}
                   required
                 >
+                  <option selected disabled value="">
+                    Seleccione
+                  </option>
                   <option value="Extra">Gasolina extra</option>
                   <option value="Corriente">Gasolina corriente</option>
                 </select>

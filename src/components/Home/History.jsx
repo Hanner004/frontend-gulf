@@ -6,6 +6,10 @@ export default class History extends Component {
     return res.toLocaleString();
   }
 
+  formatDec(dat) {
+    return dat.toLocaleString("es-co", { style: "currency", currency: "COP" });
+  }
+
   render() {
     const { user } = this.props;
     return (
@@ -25,7 +29,7 @@ export default class History extends Component {
                     <div key={i} className="row py-3">
                       <div className="col-5">{his.action}</div>
                       <div className="col-4">{this.formatDate(his.date)}</div>
-                      <div className="col-3">${his.value}</div>
+                      <div className="col-3">{this.formatDec(his.value)}</div>
                     </div>
                   );
                 })}

@@ -6,10 +6,11 @@ import List from "../data/data.json";
 function EditUserView() {
   useEffect(()=>document.title="Editar usuario");
   const [user, setUser] = useState(List.user);
+  const [session] = useState(JSON.parse(localStorage.getItem("session")));
   return (
     <div className="App">
-      <Navbar user={user} />
-      <EditUser user={user} />
+      <Navbar user={user} session={session}/>
+      <EditUser user={user} session={session}/>
     </div>
   );
 }

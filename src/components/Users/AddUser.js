@@ -65,7 +65,7 @@ export default function AddUser() {
     } else {
       Swal.fire({
         icon: "error",
-        text: "Las contraseñas deben ser iguales!",
+        text: "Las contraseñas no coinciden",
         confirmButtonColor: "#20515C",
       });
     }
