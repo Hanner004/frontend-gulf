@@ -6,7 +6,7 @@ import Prices from "../Home/Prices";
 import Modal from "../Modal/Modal";
 
 export default function Admin(props) {
-  const { user, session } = props;
+  const { user, session, prices } = props;
   const [vehicles, setVehicles] = useState([]);
   const [docClient, setDocClient] = useState([]);
 
@@ -61,7 +61,7 @@ export default function Admin(props) {
               </button>
             </div>
           </div>
-          <Prices />
+          <Prices prices={prices}/>
         </div>
       </div>
 
