@@ -1,0 +1,77 @@
+.encabezado {
+    padding: 2em;
+    padding-bottom: 0;
+    color: #4A5759;
+}
+
+.gestion {
+    background: #ecedf0ff;
+    position: relative;
+}
+
+.tabla {
+    margin: 2em;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.tabla-usuarios {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.encabezado-tabla {
+    border-bottom: solid #ced0d2ff 1px;
+    color: #4A5759;
+    font-size: 20px;
+}
+
+.tabla-usuarios tr {
+    text-align: center;
+    margin: 10px;
+}
+
+.tabla-usuarios td:first-child {
+    border: 0;
+    border-radius: 10px 0 0 10px;
+}
+
+.tabla-usuarios td:last-child {
+    border: 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.user-data {
+    background: #d4dbdf;
+    text-align: center;    
+}
+
+.add-btn {
+    text-align: center;
+}
+
+.add-user-btn {
+    background: #003845ff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 10px;
+}
+
+.add-user-btn:hover {
+    background: #003845dd;
+}
+
+.editar-btn {
+    color: black;
+}
+
+.editar-btn:hover {
+    color: black;
+}
+
+.eliminar-btn {
+    width: 1px;
+    box-shadow: none !important;
+}

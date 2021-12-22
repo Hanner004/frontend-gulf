@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;600&display=swap");
+
+.form-background {
+  background-color: #0c4353;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 35%;
+  height: auto;
+}
+
+.form-register {
+  padding: 3% 2% 1% 2%;
+}
+
+.form-login {
+  padding: 3% 9% 1% 9%;
+}
+
+.form-background h1 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+.form-background p {
+  text-align: center;
+}
+
+.form-group a {
+  color: #4d757d;
+  text-decoration: none;
+}
+
+.form-group a:hover {
+  background-color: #4d757d;
+  color: white;
+  text-decoration: none;
+}
+
+.btnSubmit {
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+}
+
+.forgotPwd a {
+  color: #4d757d;
+  text-decoration: none;
+}
+
+.forgotPwd a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.bold {
+  font-weight: bold;
+}

@@ -1,0 +1,222 @@
+* {
+  font-family: "Poppins", sans-serif, FontAwesome;
+}
+
+/* ADMIN - INTERNO */
+
+.card-gasolinas,
+.card-usuarios,
+.card-precios {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.card-gasolinas .title-card,
+.card-usuarios .title-card,
+.card-precios .title-card {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  color: #003845;
+  font-size: 20px;
+  font-weight: bolder;
+  height: 60px;
+  justify-content: space-between;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.header-card .header-title {
+  font-weight: bolder;
+  text-align: center;
+  align-items: center;
+  color: #c7c7c7;
+  border-bottom: 1px solid #eaebeb;
+}
+
+.body-card .item-gasolina {
+  text-align: center;
+  font-weight: bolder;
+  border-radius: 10px;
+  color: #003845;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  background-color: #e4eaec;
+}
+
+.body-card .item-gasolina i {
+  font-size: 32px;
+}
+
+.body-card .item-usuario {
+  color: #003845;
+  border-radius: 10px;
+  display: grid;
+  height: 9rem;
+  text-align: center;
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+  background-color: #e4eaec;
+}
+
+.body-card .item-usuario i {
+  font-size: 60px;
+  color: #003845;
+}
+
+.buttons-admin,
+.buttons-ext {
+  display: flex;
+  justify-content: end;
+}
+
+.btn-tanquear {
+  color: white;
+  width: 30%;
+  display: flex;
+  border: none;
+  font-size: larger;
+  border-radius: 10px;
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+  background-color: #003845 !important;
+}
+
+.btn-tanquear i {
+  font-size: xx-large;
+}
+
+.card-precios {
+  height: 30.5rem;
+  overflow: hidden;
+}
+
+.card-precios .body-card {
+  height: 20rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.card-precios .body-card::-webkit-scrollbar,
+.vehicles-user .card-body::-webkit-scrollbar,
+.table-history-body::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.card-precios .body-card::-webkit-scrollbar:vertical,
+.vehicles-user .card-body::-webkit-scrollbar:horizontal,
+.table-history-body::-webkit-scrollbar:vertical {
+  width: 6px;
+  height: 6px;
+}
+.card-precios .body-card::-webkit-scrollbar-thumb,
+.vehicles-user .card-body::-webkit-scrollbar-thumb,
+.table-history-body::-webkit-scrollbar-thumb {
+  background-color: #787878;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+.body-card .item-precio {
+  font-weight: bolder;
+  color: #4a5759;
+  text-align: center;
+  border-bottom: 1px solid #eaebeb;
+}
+
+.footer-card {
+  font-weight: bolder;
+  color: #003845;
+  text-align: center;
+}
+
+
+/* USER */
+
+.main-vehicle { 
+  padding-top: 28px;
+  padding-right: 11px;
+}
+
+.card-user{
+  border-radius: 15px;
+  color: #003845;
+  height: 100%;
+  background-color: white;
+  text-align: center;
+}
+
+.money-body,
+.points-body,
+.car-body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.money-user p,
+.points-user p{
+  color: #4a5759;
+  margin-top: 15px;
+}
+
+.gasoline-user .title-gas-user,
+.card-user .title-cars-user,
+.history-user .title-his-user{
+  color: #4a5759;
+  font-weight: bolder;
+  text-align: left;
+  background-color: white;
+}
+
+.gasoline-user .item-gas-user{
+  font-weight: bolder;
+  border-radius: 10px;
+  color: #003845;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: #e4eaec;
+}
+
+.gasoline-user .item-gas-user p,
+.vehicles-user .card-body .item-car p{
+  color: #4a5759;
+  font-size: 14px;
+  margin: 0;
+}
+
+.vehicles-user .card-body{
+  display:flex;
+  overflow: auto;
+}
+
+.vehicles-user .card-body .item-car{
+  background-color: #e4eaec;
+  color: #003845;
+  border-radius: 10px;
+}
+
+.history-user{
+  height: 31rem;
+  overflow: hidden;
+}
+
+.table-history .table-history-header{
+  padding: 12px;
+  font-weight: bolder;
+  color: #c7c7c7;
+  text-align: center;
+  border-bottom: 1px solid #eaebeb;
+}
+
+.table-history-body{
+  height: 24rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.table-history-body .row{
+  color: #4a5759;
+  font-weight: bolder;
+  border-bottom: 1px solid #eaebeb;
+}

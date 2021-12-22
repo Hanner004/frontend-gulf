@@ -1,0 +1,217 @@
+{
+  "prices": [
+    {
+      "_id": "1",
+      "initialDate": "1 Nov 2021",
+      "finalDate": "7 Nov 2021",
+      "corriente": "80.000",
+      "extra": "90.000"
+    },
+    {
+      "_id": "2",
+      "initialDate": "8 Nov 2021",
+      "finalDate": "14 Nov 2021",
+      "corriente": "50.000",
+      "extra": "60.000"
+    },
+    {
+      "_id": "3",
+      "initialDate": "15 Nov 2021",
+      "finalDate": "21 Nov 2021",
+      "corriente": "60.000",
+      "extra": "70.000"
+    },
+    {
+      "_id": "4",
+      "initialDate": "22 Nov 2021",
+      "finalDate": "28 Nov 2021",
+      "corriente": "30.000",
+      "extra": "40.000"
+    },
+    {
+      "_id": "5",
+      "initialDate": "29 Nov 2021",
+      "finalDate": "5 Dic 2021",
+      "corriente": "70.000",
+      "extra": "80.000"
+    },
+    {
+      "_id": "6",
+      "initialDate": "6 Dic 2021",
+      "finalDate": "12 Dic 2021",
+      "corriente": "50.000",
+      "extra": "60.000"
+    },
+    {
+      "_id": "7",
+      "initialDate": "13 Dic 2021",
+      "finalDate": "19 Dic 2021",
+      "corriente": "30.000",
+      "extra": "40.000"
+    }
+  ],
+  "user": {
+    "role": "admin",
+    "name": "Equipo 9",
+    "fullname": "Mendoza Romero",
+    "tipeID": "CC",
+    "identificacion": 1122334455,
+    "email": "correo@correo.com",
+    "telefono": 1234567,
+    "state": "A",
+    "money": "100.000",
+    "points": "100",
+    "history": [
+      {
+        "action": "Cargo de cuenta",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      },
+      {
+        "action": "Cargo de cuenta",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      },
+      {
+        "action": "Cargo de cuenta",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      },
+      {
+        "action": "Cargo de cuenta",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      },
+      {
+        "action": "Cargo de cuenta",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      },
+
+      {
+        "action": "Cargo de cuenta",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      },
+      {
+        "action": "Cargo de cuenta",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      },
+      {
+        "action": "Tanqueo",
+        "date": "17 de noviembre",
+        "value": "100.000"
+      }
+    ],
+    "cars": [
+      {
+        "_id": "1",
+        "model": "Vehículo 1",
+        "placa": "ABC 123",
+        "capacity": 4,
+        "state": "Activo"
+      },
+      {
+        "_id": "2",
+        "model": "Vehículo 2",
+        "placa": "AAA 123",
+        "capacity": 3,
+        "state": "Activo"
+      },
+      {
+        "_id": "3",
+        "model": "Vehículo 3",
+        "placa": "SDE 123",
+        "capacity": 5,
+        "state": "Activo"
+      }
+    ]
+  },
+
+  "users": [
+    {
+      "id": 1,
+      "nombre": "Fabian",
+      "apellidos": "Mendoza Romero",
+      "tipeId": "CC",
+      "identificacion": 1122334455,
+      "email": "correo@correo.com",
+      "telefono": 1234567,
+      "rol": "Externo",
+      "estado": "I"
+    },
+    {
+      "id": 2,
+      "nombre": "Hanner",
+      "apellidos": "Mendoza Romero",
+      "tipeId": "CC",
+      "identificacion": 1122334455,
+      "email": "correo@correo.com",
+      "telefono": 1234567,
+      "rol": "Interno",
+      "estado": "A"
+    },
+    {
+      "id": 3,
+      "nombre": "Veranis",
+      "apellidos": "Mendoza Romero",
+      "tipeId": "CC",
+      "identificacion": 1122334455,
+      "email": "correo@correo.com",
+      "telefono": 1234567,
+      "rol": "Administrador",
+      "estado": "A"
+    },
+    {
+      "id": 4,
+      "nombre": "Marlon",
+      "apellidos": "Mendoza Romero",
+      "tipeId": "CC",
+      "identificacion": 1122334455,
+      "email": "correo@correo.com",
+      "telefono": 1234567,
+      "rol": "Interno",
+      "estado": "I"
+    },
+    {
+      "id": 5,
+      "nombre": "Luis",
+      "apellidos": "Mendoza Romero",
+      "tipeId": "CC",
+      "identificacion": 1122334455,
+      "email": "correo@correo.com",
+      "telefono": 1234567,
+      "rol": "Externo",
+      "estado": "A"
+    },
+    {
+      "id": 6,
+      "nombre": "Vanessa",
+      "apellidos": "Mendoza Romero",
+      "tipeId": "CE",
+      "identificacion": 1234567891,
+      "email": "vanessa@gmail.com",
+      "telefono": 3015647834,
+      "rol": "Administrador",
+      "estado": "A"
+    }
+  ],
+
+  "gasolines": [
+    {
+      "_id": "1",
+      "tipe": "Corriente",
+      "price": "8.000",
+      "cant": "100",
+      "state": "Activo"
+    },
+    {
+      "_id": "2",
+      "tipe": "Extra",
+      "price": "9.000",
+      "cant": "150",
+      "state": "Activo"
+    }
+  ]
+}
