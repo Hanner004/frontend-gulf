@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./User.css"
 
-export default function Profile(props){
+export default function Profile({session}){
   
-  const usuario = props.user;
+  const idUser = session.data._id;
+  const [user, setUser] = useState([])
+
   function tipeID(tipeID) {
     switch (tipeID) {
       case "CC": return "Cédula de Ciudadanía";
@@ -13,7 +15,21 @@ export default function Profile(props){
       default: return "Error";
     }
   }
+
+  function getUser() {
+    fetch("http://localhost:4000/api/users/"+idUser,{
+      method: 'GET',
+      headers: {'Authorization': 'Bearer '+session.token},
+      })
+      .then((response) => response.json())
+      .then((data) => {setUser(data.data)})
+      .catch((err)=>{console.log(err)});
+  }
   
+  useEffect(()=>{
+    getUser();
+  });
+
   return (
     <div className="container-fluid p-5 main-fixed">
       <div className="row main-title px-4" style={{ color: "#4A5759" }}>
@@ -49,14 +65,14 @@ export default function Profile(props){
                 <label className="col-form-label">Nombres :</label>
                 <p>
                   <i className="fa fa-user form-control-feedback" />&nbsp; 
-                  {usuario.name}
+                  {user.name}
                 </p>
               </div>
               <div className="col">
                 <label className="col-form-label">Apellidos :</label>
                 <p>
                   <i className="fa fa-user form-control-feedback" />&nbsp; 
-                  {usuario.fullname}
+                  {user.lastname}
                 </p>
               </div>
             </div>
@@ -67,7 +83,7 @@ export default function Profile(props){
                 </label>
                 <p>
                   <i className="fa fa-address-card form-control-feedback" />&nbsp;
-                  {tipeID(usuario.tipeID)}
+                  {tipeID(user.tDoc)}
                 </p>
               </div>
               <div className="col">
@@ -76,7 +92,7 @@ export default function Profile(props){
                 </label>
                 <p>
                   <i className="fa fa-address-card form-control-feedback" />&nbsp;
-                  {usuario.identificacion}
+                  {user.numDoc}
                 </p>
               </div>
             </div>
@@ -85,14 +101,14 @@ export default function Profile(props){
                 <label className="col-form-label">Email :</label>
                 <p>
                   <i className="fa fa-envelope form-control-feedback" />&nbsp;
-                  {usuario.email}
+                  {user.email}
                 </p>
               </div>
               <div className="col">
                 <label className="col-form-label">Teléfono :</label>
                 <p>
                   <i className="fas fa-phone-alt form-control-feedback" />&nbsp;
-                  {usuario.telefono}
+                  {user.phone}
                 </p>
               </div>
             </div>

@@ -9,7 +9,6 @@ export default function Gasoline(props) {
 
   const getGasolines = async () => {
     let URL = `http://localhost:4000/api/gasoline`;
-    let data = {};
     let config = {
       headers: {
         authorization: "Bearer " + session.token,

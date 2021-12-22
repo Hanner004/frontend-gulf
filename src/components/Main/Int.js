@@ -45,7 +45,7 @@ export default function Admin(props) {
       </div>
       <div className="row px-4">
         <div className="col-sm-6 py-4 pe-5">
-          <Gasoline session={session}/>
+          <Gasoline />
           <Users role={user.role} token={session.token}/>
         </div>
         <div className="col-sm-6 py-4">

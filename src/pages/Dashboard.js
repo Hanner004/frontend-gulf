@@ -8,7 +8,6 @@ function Dashboard() {
 
   const [session] = useState(JSON.parse(localStorage.getItem("session")));
   const [user, setUser] = useState({});
-  const [prices, setPrices] = useState([]);
   const token = session.token;
 
   const getUser = async () => {
@@ -22,9 +21,9 @@ function Dashboard() {
     await axios
       .get(URL, config)
       .then((response) => {
-        // console.log({
-        //   user: response.data.data,
-        // });
+        console.log({
+          user: response.data.data,
+        });
         setUser(response.data.data);
       })
       .catch((error) => {
@@ -32,32 +31,15 @@ function Dashboard() {
       });
   };
 
-  const getPrices = async () => {
-    let URL = `http://localhost:4000/api/price`;
-    let myHeaders = {
-      headers: {
-        authorization: "Bearer " + token,
-      },
-    }
-    await axios.get(URL, myHeaders)
-    .then(res => {
-      setPrices(res.data.data)
-    })
-  }
-
-  // Cargar usuarios
   useEffect(() => {
     getUser();
     // eslint-disable-next-line
   }, []);
 
-  // Cargar Precios
-  useEffect( () => getPrices(), [])
-
   return (
     <div className="App">
-      <Navbar user={user} />
-      <Main user={user} session={session} prices={prices}/>
+      <Navbar user={user} session={session}/>
+      <Main user={user} session={session} />
     </div>
   );
 }

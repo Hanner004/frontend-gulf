@@ -6,9 +6,8 @@ import "./User.css";
 export default function EditUser(props) {
   const usuario = props.user;
   const { id } = useParams();
-  const [client, setClient] = useState([]);
-  const [tDoc, setTdoc] = useState(client.tDoc);
-  const [numDoc, setNumDoc] = useState(client.numDoc);
+  const [tDoc, setTdoc] = useState("");
+  const [numDoc, setNumDoc] = useState("");
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -30,7 +29,6 @@ export default function EditUser(props) {
     })
       .then((response) => response.json())
       .then((data) => {
-        setClient(data.data);
         setTdoc(data.data.tDoc);
         setNumDoc(data.data.numDoc);
         setName(data.data.name);

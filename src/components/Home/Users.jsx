@@ -1,14 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import list from "../../data/data.json";
 
-export default function Users({role}) {
+export default function Users({role, token}) {
 
-  let listUsers = []
-  role === "int" ?
-    list.users.map((user)=>user.rol!="Administrador"&&listUsers.push(user)):
-    listUsers = list.users
-  
+  const [users, setUsers] = useState([]);
+
+  function getUsers() {
+    fetch("http://localhost:4000/api/users",{
+      method: 'GET',
+      headers: {'Authorization': 'Bearer '+token},
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        let list = []
+        role === "int" ?
+          data.data.map((user)=>user.role!="admin"&&list.push(user)):
+          list = data.data
+        setUsers(list)
+      })
+      .catch((err)=>{console.log(err)});
+  }
+
+  useEffect(()=>{
+    getUsers();
+  }, []);
+
   return (
     <div className="row card-usuarios">
       <div className="header-card px-4">
@@ -20,11 +36,11 @@ export default function Users({role}) {
         <div className="row my-3">
           <div className="col item-usuario py-3">
             <i className="fas fa-user"></i>
-            <p className="mt-3 mb-0">{listUsers[0].nombre}</p>
+            <p className="mt-3 mb-0">{users&&users.length&&users[0].name}</p>
           </div>
           <div className="col item-usuario py-3 mx-3">
             <i className="fas fa-user"></i>
-            <p className="mt-3 mb-0">{listUsers[1].nombre}</p>
+            <p className="mt-3 mb-0">{users&&users.length&&users[1].name}</p>
           </div>
           <div
             className="col item-usuario py-3"
