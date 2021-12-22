@@ -8,7 +8,6 @@ const moment = require('moment');
 
 export default function Prices({prices}) {
 
-  console.log(prices)
   const [session] = useState(JSON.parse(localStorage.getItem("session")));
   const [initialDate, setInitialDate] = useState("");
   const [endDate, setEndDate] = useState("");
@@ -71,11 +70,7 @@ export default function Prices({prices}) {
 
   /* FORMATO FECHA Y DINERO */
   function formatDate(date) {
-    return moment(date).format('YYYY[/]MM[/]DD') 
-    /* var res = new Date(date);
-    console.log(res.toLocaleString())
-    res = res.toLocaleString().split(',')[0].split('/')
-    return res[1] + '/' + res[0] + '/' + res[2]; */
+    return moment(date).format('DD[/]MM[/]YYYY');
   }
 
   function formatDec(dat) {
@@ -101,8 +96,8 @@ export default function Prices({prices}) {
         {prices.map(row => {
           return(
             <div className="row item-precio py-3" key={row._id}>
-              <div className="col">{formatDate(row.initialDate)}</div>
-              <div className="col">{formatDate(row.endDate)}</div>
+              <div className="col">{formatDate(row.initialDate.split('T')[0])}</div>
+              <div className="col">{formatDate(row.endDate.split('T')[0])}</div>
               <div className="col">{formatDec(row.amountCurrent)}</div>
               <div className="col">{formatDec(row.amountExtra)}</div>
               <div className="col">
@@ -145,8 +140,7 @@ export default function Prices({prices}) {
                 <div className="col-sm-7">
                   <input
                     type="date"
-                    data-date-format="DD MMMM YYYY"
-                    min="2017-04-01"
+                    min="2017-04-01 00:00"
                     className="form-control"
                     onChange={(e) => {
                       setInitialDate(e.target.value);
