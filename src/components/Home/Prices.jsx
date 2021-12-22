@@ -4,6 +4,7 @@ import Modal from "../Modal/Modal";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+const moment = require('moment');
 
 export default function Prices({prices}) {
 
@@ -70,10 +71,11 @@ export default function Prices({prices}) {
 
   /* FORMATO FECHA Y DINERO */
   function formatDate(date) {
-    var res = new Date(date);
+    return moment(date).format('YYYY[/]MM[/]DD') 
+    /* var res = new Date(date);
     console.log(res.toLocaleString())
     res = res.toLocaleString().split(',')[0].split('/')
-    return res[1] + '/' + res[0] + '/' + res[2];
+    return res[1] + '/' + res[0] + '/' + res[2]; */
   }
 
   function formatDec(dat) {
