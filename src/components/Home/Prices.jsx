@@ -71,6 +71,7 @@ export default function Prices({prices}) {
   /* FORMATO FECHA Y DINERO */
   function formatDate(date) {
     var res = new Date(date);
+    console.log(res.toLocaleString())
     res = res.toLocaleString().split(',')[0].split('/')
     return res[1] + '/' + res[0] + '/' + res[2];
   }
