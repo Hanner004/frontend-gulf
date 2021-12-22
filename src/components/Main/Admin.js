@@ -6,7 +6,7 @@ import Prices from "../Home/Prices";
 import Modal from "../Modal/Modal";
 
 export default function Admin(props) {
-  const { user, prices } = props;
+  const { user, prices, session} = props;
   return (
     <div className="container-fluid p-5 main">
       <div className="row px-4" style={{ color: "#4A5759" }}>
